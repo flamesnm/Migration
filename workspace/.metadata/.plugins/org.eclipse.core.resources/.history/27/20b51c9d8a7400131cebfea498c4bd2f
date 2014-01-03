@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="a3f5ac4c-37b1-4dba-9298-2567815a6b1c" created="Mon Dec 30 12:09:02 GMT 2013" createdBy="mclon0" main="98_Force Migrate all accounts in the pre-migration container" modified="Mon Dec 30 12:09:02 GMT 2013" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+    <AssemblyLine name="98_Force Migrate all accounts in the pre-migration container">
+        <ModTime>1388405342475</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates/>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer"/>
+        <ContainerDF name="DataFlowContainer"/>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>
