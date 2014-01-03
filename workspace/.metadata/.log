@@ -1,0 +1,38 @@
+!SESSION 2014-01-03 14:38:31.229 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=JRE 1.6.0 IBM J9 2.4 Windows 7 amd64-64 jvmwa6460sr10-20111207_96808 (JIT enabled, AOT enabled)
+J9VM - 20111207_096808
+JIT  - r9_20111107_21307ifx1
+GC   - 20110519_AA
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.402
+!MESSAGE CTGDIR103W The properties file 'C:\Users\mclon0\Documents\GitHub\Migration\workspace\3PD Migration ALs\Runtime-3PD Migration ALs\3PD Migration ALs.properties' for 3PD Migration ALs was not found, and will be created if anything is written to it.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.418
+!MESSAGE CTGDIR103W The properties file 'C:\Users\mclon0\Documents\GitHub\Migration\workspace\3PD Migration ALs\Runtime-3PD Migration ALs\3PD Migration ALs.properties' for 3PD Migration ALs was not found, and will be created if anything is written to it.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.746
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-01-03 14:39:51.746
+!MESSAGE CTGDKE102E 3_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.746
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-01-03 14:39:51.746
+!MESSAGE CTGDKE102E 3_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.824
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-01-03 14:39:51.824
+!MESSAGE CTGDKE102E AssemblyLines/3_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-01-03 14:39:51.824
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-01-03 14:39:51.824
+!MESSAGE CTGDKE102E AssemblyLines/3_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.

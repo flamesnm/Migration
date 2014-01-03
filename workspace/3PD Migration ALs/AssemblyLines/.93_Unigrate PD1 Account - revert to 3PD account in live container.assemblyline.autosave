@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="4e37f630-483b-4264-932e-99f400ff9a79" created="Fri Jan 03 13:55:40 GMT 2014" createdBy="mclon0" main="93_Unigrate PD1 Account - revert to 3PD account in live container" modified="Fri Jan 03 13:55:40 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+    <AssemblyLine name="93_Unigrate PD1 Account - revert to 3PD account in live container">
+        <ModTime>1388750438066</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates/>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer"/>
+        <ContainerDF name="DataFlowContainer"/>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>

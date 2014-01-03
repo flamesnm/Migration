@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="1be181fd-fa71-4710-9f7d-10b85cc856f1" created="Mon Dec 30 12:18:04 GMT 2013" createdBy="mclon0" main="97_PD1 Changelog and Complete Migration" modified="Mon Dec 30 12:18:04 GMT 2013" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+    <AssemblyLine name="97_PD1 Changelog and Complete Migration">
+        <ModTime>1388405884684</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates/>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer"/>
+        <ContainerDF name="DataFlowContainer"/>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>

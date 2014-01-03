@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="1ac833d3-4b16-41e2-857d-ac63cd282184" created="Fri Jan 03 14:38:42 GMT 2014" createdBy="mclon0" main="Default.tdiserver" modified="Fri Jan 03 14:38:42 GMT 2014" modifiedBy="mclon0" project="TDI Servers" version="7.1.1">
+    <Script name="Default.tdiserver">
+        <parameter name="address">localhost:1099</parameter>
+        <parameter name="install">C:\Program Files\IBM\TDI\V7.1.1</parameter>
+        <parameter name="ssl">true</parameter>
+        <parameter name="type">rmi</parameter>
+        <parameter name="workdir">C:\Users\mclon0\Documents\TDI</parameter>
+    </Script>
+</MetamergeConfig>

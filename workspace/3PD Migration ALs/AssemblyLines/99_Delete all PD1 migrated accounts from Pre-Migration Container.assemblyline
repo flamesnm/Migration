@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="620fa627-32b2-4113-bf72-1a5d027e2a1b" created="Mon Dec 30 11:57:21 GMT 2013" createdBy="mclon0" main="99_Delete all PD1 migrated accounts from Pre-Migration Container" modified="Mon Dec 30 11:57:21 GMT 2013" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+    <AssemblyLine name="99_Delete all PD1 migrated accounts from Pre-Migration Container">
+        <ModTime>1388404641189</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates/>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer"/>
+        <ContainerDF name="DataFlowContainer"/>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>
