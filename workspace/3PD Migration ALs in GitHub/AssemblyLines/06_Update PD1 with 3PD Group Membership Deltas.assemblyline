@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="3743939c-91f2-4725-82b4-c89e811155a5" created="Mon Jan 13 11:15:31 GMT 2014" createdBy="mclon0" main="06_Update PD1 with 3PD Group Membership Deltas" modified="Mon Jan 13 11:15:31 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs in GitHub" version="7.1.1">
+    <AssemblyLine name="06_Update PD1 with 3PD Group Membership Deltas">
+        <ModTime>1389611731254</ModTime>
+        <Settings/>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates/>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer"/>
+        <ContainerDF name="DataFlowContainer"/>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>
