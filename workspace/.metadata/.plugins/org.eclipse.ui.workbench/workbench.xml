@@ -17,7 +17,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="23"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -26,10 +26,19 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline" partName="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline" title="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline"/>
+</editor>
+<editor id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline" partName="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline" title="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
@@ -44,7 +53,11 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="300"/>
+<expanded>
+<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Warnings (1 item)"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="598"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
@@ -71,7 +84,7 @@
 </viewState>
 </view>
 </views>
-<perspectives activePart="com.ibm.tdi.rcp.navigator" activePerspective="com.ibm.tdi.rcp.perspective">
+<perspectives activePart="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" activePerspective="com.ibm.tdi.rcp.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="com.ibm.tdi.rcp.actionSet"/>
@@ -196,8 +209,8 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.25993723" ratioLeft="497" ratioRight="1415" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
-<info folder="true" part="bottomRight" ratio="0.69978166" ratioLeft="641" ratioRight="275" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.25301206" ratioLeft="483" ratioRight="1426" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
+<info folder="true" part="bottomRight" ratio="0.8762322" ratioLeft="800" ratioRight="113" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="com.ibm.tdi.eclipse.views.JavaScriptView" label="JavaScript"/>
@@ -220,7 +233,54 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Set all 3PD accounts NOT to redirect to PSS.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
+</editors>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container" index="0"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="1"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="04_Set all 3PD accounts NOT to redirect to PSS" index="3"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="4"/>
+<item historyLabel="02_Migrate 3PD Groups - Objects only" index="5"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="04_Set all 3PD accounts NOT to redirect to PSS" index="3"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="4"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="02_Migrate 3PD Groups - Objects only" index="5"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="6"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="7"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+<item historyLabel="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY" index="7"/>
+<item active="true" historyLabel="01_Migrate 3PD Accounts to PD1 Pre-Migration Container" index="2"/>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -237,14 +297,20 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.ui.browser.editorSupport" name="javascript.html" tooltip="C:\Program Files\IBM\TDI\V7.1.1\jscript\en\javascript.html">
-<persistable uri="file:/C:/Program%20Files/IBM/TDI/V7.1.1/jscript/en/javascript.html"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="96_Verify PD1 Pre-migrated accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated accounts.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated accounts.assemblyline"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="02_Migrate 3PD Groups - Objects only.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="96_Verify PD1 Pre-migrated Groups.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated Groups.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated Groups.assemblyline"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Set all 3PD accounts NOT to redirect to PSS.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Set all 3PD accounts NOT to redirect to PSS.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/04_Set all 3PD accounts NOT to redirect to PSS.assemblyline"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD Accounts to PD1 Pre-Migration Container.assemblyline"/>
 </file>
 </mruList>
 </workbench>
