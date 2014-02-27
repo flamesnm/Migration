@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TDI>
-<Breakpoints>
-<Breakpoint enabled="true" location="Loop through group membership"/>
-</Breakpoints>
-<WatchList></WatchList>
-<Expressions></Expressions>
-</TDI>
+<TDI>&#x0A;<Breakpoints>&#x0A;<Breakpoint enabled="true" location="Loop through group membership"/>&#x0A;<Breakpoint enabled="true" location="IF GROUP Object"/>&#x0A;<Breakpoint enabled="true" location="Setup variables for new membership DNs array"/>
+<Breakpoint enabled="true" location="Check current PD1 group members"/>
+</Breakpoints>&#x0A;<WatchList></WatchList>&#x0A;<Expressions>isTargetGroup&#x0A;work.$dn[0].indexOf(&quot;ou=SAP,ou=Groups,cn=3PD,ou=Proxy,O=directories&quot;);&#x0A;work.testObjectClass[0].toLowerCase();&#x0A;pd1members&#x0A;</Expressions>&#x0A;</TDI>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="250" y="250">
+<window height="472" maximized="true" width="667" x="6" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -28,20 +28,12 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline" partName="04_Set GLMS accounts into Dumb password group, set passwords and remove group" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/04_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline" title="04_Set GLMS accounts into Dumb password group, set passwords and remove group" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline"/>
-</editor>
 <editor activePart="true" focus="true" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline" partName="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline" title="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline"/>
-</editor>
-<editor id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline" partName="03_Set PD1 Group Membership Based on 3PD Group member values" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline" title="03_Set PD1 Group Membership Based on 3PD Group member values" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
 </editor>
 </editors>
 <views>
@@ -58,7 +50,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (2 items)"/>
+<category IMemento.internal.id=" (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="598"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -212,8 +204,8 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.2854898" ratioLeft="545" ratioRight="1364" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
-<info folder="true" part="bottomRight" ratio="0.6998905" ratioLeft="639" ratioRight="274" relationship="4" relative="org.eclipse.ui.editorss">
+<info part="org.eclipse.ui.editorss" ratio="0.2357255" ratioLeft="450" ratioRight="1459" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
+<info folder="true" part="bottomRight" ratio="0.871851" ratioLeft="796" ratioRight="117" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="com.ibm.tdi.eclipse.views.JavaScriptView" label="JavaScript"/>
@@ -238,64 +230,61 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/05_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/99_Delete all PD1 migrated groups.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline"/>
 </editors>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="05_Set GLMS accounts into Dumb password group, set passwords and remove group" index="1"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="05_Set GLMS accounts into Dumb password group, set passwords and remove group" index="1"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="04_Set GLMS accounts into Dumb password group, set passwords and remove group" index="6"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="99_Delete all PD1 migrated groups" index="7"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD Groups - Objects only" index="3"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="2"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="4"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="2"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
-<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="2"/>
-<item active="true" historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="5"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="2"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="1"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="0"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD Group member values" index="0"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="2"/>
+<item historyLabel="04_Set GLMS accounts into Dumb password group, set passwords and remove group" index="3"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="5"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="4"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="6"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
+<item active="true" historyLabel="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" index="7"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -313,29 +302,14 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="02_Migrate 3PD LDIF Groups - Objects only.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="02_Migrate 3PD Groups - Objects only.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD Groups - Objects only.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="99_Delete all PD1 migrated groups.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/99_Delete all PD1 migrated groups.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/99_Delete all PD1 migrated groups.assemblyline"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.assemblyline"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="05_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/05_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/05_Set GLMS accounts into Dumb password group, set passwords and remove group.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_1_Migrate 3PD Accounts to PD1 Container_TEST_ONLY.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="06_Update PD1 with 3PD Group Membership Deltas.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/06_Update PD1 with 3PD Group Membership Deltas.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/06_Update PD1 with 3PD Group Membership Deltas.assemblyline"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="xxx_Set_Password_for_specific_PD0_accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline"/>
 </file>
 </mruList>
 </workbench>
