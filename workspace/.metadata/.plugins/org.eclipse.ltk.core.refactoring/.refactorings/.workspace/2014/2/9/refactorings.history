@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS accounts.assemblyline&apos;" deleteContents="false" description="Delete resource &apos;3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS accounts.assemblyline&apos;" element1="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS accounts.assemblyline" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1393508822371"/>
+</session>

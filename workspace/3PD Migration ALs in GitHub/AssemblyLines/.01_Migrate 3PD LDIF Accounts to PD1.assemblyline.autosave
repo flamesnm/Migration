@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="314" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Mon Mar 17 10:03:21 GMT 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="73f98ded-5fcd-4416-9136-3fec5e81c367" created="Mon Mar 17 10:53:12 GMT 2014" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Mon Mar 17 10:53:12 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs in GitHub" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
         <ModTime>1395050601500</ModTime>
         <Settings/>
         <Hooks>
-            <ModTime>1395050601500</ModTime>
             <Hook name="epilog">
                 <InheritFrom>[no inheritance]</InheritFrom>
                 <Name>epilog</Name>
@@ -15,7 +14,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
-                <ModTime>1395050601500</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
@@ -41,10 +39,8 @@ var connectorMode="";]]></Script>
             <ProxySettings/>
         </SimulationConfig>
         <LogConfig>
-            <ModTime>1388499253663</ModTime>
             <Logger name="FileAppender">
                 <InheritFrom>system:/Loggers/ibmdi.FileAppender</InheritFrom>
-                <ModTime>1388499253663</ModTime>
                 <parameter name="File.Append">false</parameter>
                 <parameter name="File.File">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Logs\Migration of accounts from 3PD to PD1.txt</parameter>
                 <parameter name="Pattern.ConversionPattern">%d{ISO8601} %-5p [%c] - %m%n</parameter>
@@ -54,7 +50,6 @@ var connectorMode="";]]></Script>
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1393268118131</ModTime>
             <Connector name="read3PDLDIF">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
                 <ModTime>1393268118131</ModTime>
@@ -62,25 +57,20 @@ var connectorMode="";]]></Script>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1393268118131</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
                     <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
-                    <ModTime>1392902635227</ModTime>
                     <Schema name="Input">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1392899630140</ModTime>
                     </Schema>
                     <Schema name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1392899630140</ModTime>
                     </Schema>
                 </Parser>
                 <AttributeMap name="Input">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392906744631</ModTime>
                     <AttributeMapItem>
                         <Name>$dn</Name>
                         <Type>simple</Type>
@@ -180,10 +170,8 @@ var connectorMode="";]]></Script>
                 </AttributeMap>
                 <AttributeMap name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392899630140</ModTime>
                 </AttributeMap>
                 <DeltaSettings>
-                    <ModTime>1392903679520</ModTime>
                     <UniqueAttribute/>
                     <WhenToCommit>After every database operation</WhenToCommit>
                     <RowLocking>SERIALIZABLE</RowLocking>
@@ -191,7 +179,6 @@ var connectorMode="";]]></Script>
                 </DeltaSettings>
                 <Schema name="Input">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392905722571</ModTime>
                     <SchemaItem>
                         <Name>$dn</Name>
                         <Syntax>java.lang.String</Syntax>
@@ -395,7 +382,6 @@ var connectorMode="";]]></Script>
                 </Schema>
                 <Schema name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392905722587</ModTime>
                     <SchemaItem>
                         <Name>$dn</Name>
                         <Syntax>java.lang.String</Syntax>
@@ -599,11 +585,9 @@ var connectorMode="";]]></Script>
                 </Schema>
                 <LinkCriteria>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392899630140</ModTime>
                 </LinkCriteria>
                 <Hooks>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392906057369</ModTime>
                     <Hook name="after_initialize">
                         <InheritFrom>[no inheritance]</InheritFrom>
                         <Name>after_initialize</Name>
@@ -625,7 +609,6 @@ var connectorMode="";]]></Script>
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1393505638612</ModTime>
             <Branch name="IF 3PD User object">
                 <ModTime>1393505638612</ModTime>
                 <Connector name="updateOrAddAccountPD1">
@@ -656,7 +639,6 @@ var connectorMode="";]]></Script>
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393267786049</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>advanced</Type>
@@ -746,7 +728,6 @@ var connectorMode="";]]></Script>
                     </Schema>
                     <Schema name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1391435372488</ModTime>
                         <SchemaItem>
                             <Name>USNIntersite</Name>
                             <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
@@ -2319,7 +2300,6 @@ var connectorMode="";]]></Script>
                     </Schema>
                     <LinkCriteria>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1391018924729</ModTime>
                         <LinkCriteriaItem>
                             <Key>143df30269b</Key>
                             <Attribute>sAMAccountName</Attribute>
@@ -2329,7 +2309,6 @@ var connectorMode="";]]></Script>
                     </LinkCriteria>
                     <Hooks>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393326901764</ModTime>
                         <Hook name="after_add">
                             <InheritFrom>[no inheritance]</InheritFrom>
                             <Name>after_add</Name>
@@ -2395,7 +2374,6 @@ connectorMode = "nochange";]]></Script>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1385063357921</ModTime>
                         <parameter name="automapADPassword">true</parameter>
                         <parameter name="debug">false</parameter>
                         <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
@@ -2418,7 +2396,6 @@ connectorMode = "nochange";]]></Script>
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393343848848</ModTime>
                         <AttributeMapItem>
                             <Name>userPassword</Name>
                             <Type>advanced</Type>
@@ -2458,7 +2435,6 @@ return password;]]></Script>
                     </Schema>
                     <Schema name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1385058498832</ModTime>
                         <SchemaItem>
                             <Name>USNIntersite</Name>
                             <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
@@ -4030,7 +4006,6 @@ return password;]]></Script>
                     </Schema>
                     <LinkCriteria>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1385059996406</ModTime>
                         <LinkCriteriaItem>
                             <Key>1427bea94cf</Key>
                             <Attribute>sAMAccountName</Attribute>
@@ -4040,7 +4015,6 @@ return password;]]></Script>
                     </LinkCriteria>
                     <Hooks>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393326736791</ModTime>
                         <Hook name="default_fail">
                             <InheritFrom>[no inheritance]</InheritFrom>
                             <Name>default_fail</Name>
@@ -4090,7 +4064,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393424070891</ModTime>
                         <AttributeMapItem>
                             <Name>pwdLastSet</Name>
                             <Type>advanced</Type>
@@ -4114,7 +4087,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     <DeltaSettings/>
                     <Schema name="Input">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1391082317858</ModTime>
                         <SchemaItem>
                             <Name>$dn</Name>
                             <Syntax>java.lang.String</Syntax>
@@ -4266,7 +4238,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </Schema>
                     <Schema name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1391082318343</ModTime>
                         <SchemaItem>
                             <Name>$dn</Name>
                             <Syntax>java.lang.String</Syntax>
@@ -5878,7 +5849,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </Schema>
                     <LinkCriteria>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1385062833125</ModTime>
                         <LinkCriteriaItem>
                             <Key>1427c2d6ea4</Key>
                             <Attribute>sAMAccountName</Attribute>
@@ -5888,7 +5858,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </LinkCriteria>
                     <Hooks>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393326731322</ModTime>
                         <Hook name="default_fail">
                             <InheritFrom>[no inheritance]</InheritFrom>
                             <Name>default_fail</Name>
@@ -7740,7 +7709,6 @@ migratedCount ++;]]></parameter>
                         </LinkCriteria>
                         <Hooks>
                             <InheritFrom>[parent]</InheritFrom>
-                            <ModTime>1393326757166</ModTime>
                             <Hook name="default_fail">
                                 <InheritFrom>[no inheritance]</InheritFrom>
                                 <Name>default_fail</Name>
@@ -7765,9 +7733,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </Connector>
                     <ScriptCondition><![CDATA[//Check whether in debug mode
 return debug;]]></ScriptCondition>
-                    <Conditions>
-                        <ModTime>1393247298600</ModTime>
-                    </Conditions>
+                    <Conditions/>
                     <MatchAny>false</MatchAny>
                     <Enabled>true</Enabled>
                     <Type>0</Type>
