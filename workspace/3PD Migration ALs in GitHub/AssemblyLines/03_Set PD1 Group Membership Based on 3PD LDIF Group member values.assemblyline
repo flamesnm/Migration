@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="123" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" modified="Wed Feb 26 17:54:00 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="124" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership Based on 3PD LDIF Group member values" modified="Tue Mar 18 19:04:31 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
     <Container name="References"/>
     
 
@@ -6,8 +6,9 @@
 
 
 
+
 <AssemblyLine name="03_Set PD1 Group Membership Based on 3PD LDIF Group member values">
-        <ModTime>1393437238476</ModTime>
+        <ModTime>1395169470757</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1388422206951</ModTime>
@@ -46,17 +47,17 @@
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1393437238476</ModTime>
+            <ModTime>1395169470757</ModTime>
             <Connector name="FileConnector">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1393437238476</ModTime>
+                <ModTime>1395169470757</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392915659585</ModTime>
+                    <ModTime>1395169470757</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -1282,7 +1283,6 @@ work.setAttribute("wNewMember",newCN + newDN);]]></parameter>
                                 </Hook>
                                 <Hook name="lookup_fail">
                                     <InheritFrom>[no inheritance]</InheritFrom>
-                                    <ModTime>1393436056726</ModTime>
                                     <Name>lookup_fail</Name>
                                     <Script><![CDATA[// Log this to log
 task.logmsg("FATAL","+++++++++++++++++++ " + thisComponent.getName() + " Error adding group membership: " + work.wNewMember);
@@ -1291,7 +1291,6 @@ task.logmsg("FATAL","+++++++++++++++++++ " + error.exception + " : " + error.mes
                                 </Hook>
                                 <Hook name="lookup_ok">
                                     <InheritFrom>[no inheritance]</InheritFrom>
-                                    <ModTime>1393436350234</ModTime>
                                     <Name>lookup_ok</Name>
                                     <Script><![CDATA[// If we get here, the new member has been checked as existing in PD1. Sometimes they don't exist due to the lack of data integrity in 3PD.
 

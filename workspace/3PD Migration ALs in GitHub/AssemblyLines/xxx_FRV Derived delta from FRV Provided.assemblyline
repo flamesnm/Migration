@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="89" UUID="83d631d4-aa47-4bf5-948f-ef1a0dbdff39" created="Wed Feb 08 17:51:35 UTC 2012" createdBy="root" main="2_FRV Derived from FRV Provided" modified="Wed Oct 16 14:40:52 BST 2013" modifiedBy="mclon0" project="ajf" version="7.1.1">
-    <AssemblyLine name="2_FRV Derived from FRV Provided">
-        <ModTime>1381930852944</ModTime>
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="90" UUID="83d631d4-aa47-4bf5-948f-ef1a0dbdff39" created="Wed Feb 08 17:51:35 UTC 2012" createdBy="root" main="xxx_FRV Derived delta from FRV Provided" modified="Mon Mar 17 12:47:47 GMT 2014" modifiedBy="mclon0" project="ajf" version="7.1.1">
+    <AssemblyLine name="xxx_FRV Derived delta from FRV Provided">
+        <ModTime>1395060465118</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1381855576404</ModTime>
@@ -26,23 +26,23 @@ var accArray = new Object;]]></Script>
                 <Component name="Else_derived_non_FRV_account" state="Enabled"/>
                 <Component name="ReportUserMissing" state="Enabled"/>
                 <Component name="FRV accounts missing" state="Simulated"/>
-                <Component name="Read_AM_FRV_Accounts" state="Enabled"/>
+                <Component name="Read_CE_owned_3PD_accounts" state="Enabled"/>
             </SimulationStates>
             <ProxySettings/>
         </SimulationConfig>
         <LogConfig/>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1381930408275</ModTime>
-            <Connector name="Read_AM_FRV_Accounts">
+            <ModTime>1395060363861</ModTime>
+            <Connector name="Read_CE_owned_3PD_accounts">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1381930408275</ModTime>
+                <ModTime>1395060363861</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1381924401157</ModTime>
+                    <ModTime>1395060363861</ModTime>
                     <parameter name="debug">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\FRV Users from Alan\FRVusers.csv</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
@@ -333,22 +333,22 @@ var accArray = new Object;]]></Script>
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1381930852944</ModTime>
+            <ModTime>1395060465118</ModTime>
             <Branch name="IF_FRV_data_not_loaded">
-                <ModTime>1381924692720</ModTime>
+                <ModTime>1395060465118</ModTime>
                 <Loop name="read_derived_frv_accs">
-                    <ModTime>1381924692720</ModTime>
+                    <ModTime>1395060465118</ModTime>
                     <LoopType>1</LoopType>
                     <Connector name="read_derived_frv_accs">
                         <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                        <ModTime>1381924622151</ModTime>
+                        <ModTime>1395060394859</ModTime>
                         <ConnectorMode>Iterator</ConnectorMode>
                         <ConnectorState>Enabled</ConnectorState>
                         <Configuration>
                             <InheritFrom>[parent]</InheritFrom>
-                            <ModTime>1381924589709</ModTime>
+                            <ModTime>1395060378498</ModTime>
                             <parameter name="debug">true</parameter>
-                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Derived_FRV_Accounts.csv</parameter>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\CE owned 3PD accounts.csv</parameter>
                         </Configuration>
                         <Parser>
                             <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
@@ -365,11 +365,16 @@ var accArray = new Object;]]></Script>
                         </Parser>
                         <AttributeMap name="Input">
                             <InheritFrom>[parent]</InheritFrom>
-                            <ModTime>1381924622151</ModTime>
+                            <ModTime>1395060394859</ModTime>
                             <AttributeMapItem>
-                                <Name>uid</Name>
+                                <Name>cn</Name>
                                 <Type>simple</Type>
-                                <Simple>uid</Simple>
+                                <Simple>cn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>eruid</Name>
+                                <Type>simple</Type>
+                                <Simple>eruid</Simple>
                             </AttributeMapItem>
                         </AttributeMap>
                         <AttributeMap name="Output"/>
@@ -382,9 +387,13 @@ var accArray = new Object;]]></Script>
                         </DeltaSettings>
                         <Schema name="Input">
                             <InheritFrom>[parent]</InheritFrom>
-                            <ModTime>1381924619917</ModTime>
+                            <ModTime>1395060389333</ModTime>
                             <SchemaItem>
-                                <Name>uid</Name>
+                                <Name>cn</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>eruid</Name>
                                 <Syntax>java.lang.String</Syntax>
                             </SchemaItem>
                         </Schema>
@@ -433,14 +442,14 @@ var accArray = new Object;]]></Script>
                         <InitializeOption>0</InitializeOption>
                     </Connector>
                     <Branch name="read_derived_frv_accs">
-                        <ModTime>1381924692720</ModTime>
+                        <ModTime>1395060465118</ModTime>
                         <Script name="Stash_FRV_entry">
-                            <ModTime>1381924692720</ModTime>
+                            <ModTime>1395060465118</ModTime>
                             <parameter name="script"><![CDATA[// Add the FRV user uid to the uid object
 // This is a javascript object. You set properties like this : object.propertyname="value"
 // retrieve them with object.propertyname;
 
-accArray[work.getString("uid")] = work.getString("uid");]]></parameter>
+accArray[work.eruid] = work.cn;]]></parameter>
                         </Script>
                         <Conditions/>
                         <MatchAny>false</MatchAny>

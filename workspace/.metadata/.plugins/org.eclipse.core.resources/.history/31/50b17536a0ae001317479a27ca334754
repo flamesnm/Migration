@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="116" UUID="83d631d4-aa47-4bf5-948f-ef1a0dbdff39" created="Wed Feb 08 17:51:35 UTC 2012" createdBy="root" main="98_3PD Groups for CE Owned Accounts" modified="Tue Mar 18 13:21:07 GMT 2014" modifiedBy="mclon0" project="ajf" version="7.1.1">
+    <AssemblyLine name="98_3PD Groups for CE Owned Accounts">
+        <ModTime>1395148866270</ModTime>
+        <Settings/>
+        <Hooks>
+            <ModTime>1381855576404</ModTime>
+            <Hook name="prolog">
+                <InheritFrom>[no inheritance]</InheritFrom>
+                <Name>prolog</Name>
+                <Script><![CDATA[// Create an object to use as associative array
+var accArray = new Object;]]></Script>
+                <Enabled>true</Enabled>
+            </Hook>
+        </Hooks>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates>
+                <Component name="accounts not loaded" state="Enabled"/>
+                <Component name="read CE owned accounts" state="Enabled"/>
+                <Component name="stash entry" state="Enabled"/>
+                <Component name="flag accounts as read" state="Enabled"/>
+                <Component name="Loop Through Group Members" state="Enabled"/>
+                <Component name="Does group contain a CE owned 3PD account ?" state="Enabled"/>
+                <Component name="ReportUserFound" state="Enabled"/>
+                <Component name="Group does not contain CE owned 3PD account" state="Enabled"/>
+                <Component name="ReportUserMissing" state="Enabled"/>
+                <Component name="Read CE owned 3PD accounts" state="Simulated"/>
+            </SimulationStates>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig/>
+        <ContainerEF name="EntryFeedContainer">
+            <ModTime>1395148431159</ModTime>
+        </ContainerEF>
+        <ContainerDF name="DataFlowContainer">
+            <ModTime>1395148866270</ModTime>
+            <Branch name="accounts not loaded">
+                <ModTime>1395071969410</ModTime>
+                <Loop name="read CE owned accounts">
+                    <ModTime>1395071969410</ModTime>
+                    <LoopType>1</LoopType>
+                    <Connector name="read CE owned accounts">
+                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                        <ModTime>1395063394885</ModTime>
+                        <ConnectorMode>Iterator</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395063379218</ModTime>
+                            <parameter name="debug">true</parameter>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\CE owned 3PD accounts.csv</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                            <ModTime>1381316917477</ModTime>
+                            <parameter name="csvColumnSeparator">,</parameter>
+                            <parameter name="csvColumns"/>
+                            <parameter name="debug">false</parameter>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395063394885</ModTime>
+                            <AttributeMapItem>
+                                <Name>cn</Name>
+                                <Type>simple</Type>
+                                <Simple>cn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>eruid</Name>
+                                <Type>simple</Type>
+                                <Simple>eruid</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <AttributeMap name="Output"/>
+                        <DeltaSettings>
+                            <ModTime>1381316362653</ModTime>
+                            <UniqueAttribute/>
+                            <WhenToCommit>After every database operation</WhenToCommit>
+                            <RowLocking>SERIALIZABLE</RowLocking>
+                            <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                        </DeltaSettings>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395063390523</ModTime>
+                            <SchemaItem>
+                                <Name>cn</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>eruid</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                        </Schema>
+                        <Schema name="Output">
+                            <UserComment>{extsyntax=TEXTAREA, name=userComment}</UserComment>
+                            <InheritFrom>[no inheritance]</InheritFrom>
+                            <SchemaItem>
+                                <Name>debug</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>exclusiveLock</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAppend</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAwaitDataTimeout</Name>
+                                <NativeSyntax>DROPEDIT</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>filePath</Name>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>userComment</Name>
+                                <NativeSyntax>TEXTAREA</NativeSyntax>
+                            </SchemaItem>
+                        </Schema>
+                        <LinkCriteria/>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                        <InitializeOption>0</InitializeOption>
+                    </Connector>
+                    <Branch name="read CE owned accounts">
+                        <ModTime>1395071969410</ModTime>
+                        <Script name="stash entry">
+                            <ModTime>1395071969410</ModTime>
+                            <parameter name="script">accArray["uid=" + work.eruid + ",ou=Users,cn=3PD,ou=Proxy,O=directories"] = work.cn;</parameter>
+                        </Script>
+                        <Conditions/>
+                        <MatchAny>false</MatchAny>
+                        <Enabled>true</Enabled>
+                        <Type>0</Type>
+                    </Branch>
+                </Loop>
+                <Script name="flag accounts as read">
+                    <ModTime>1395063367211</ModTime>
+                    <parameter name="script"><![CDATA[// Mark that we have read the passwd file
+accArray.__flag__ = "OK";]]></parameter>
+                </Script>
+                <ScriptCondition><![CDATA[// If we have an entry called __flag__ then the data is loaded
+return (accArray.__flag__ != "OK")]]></ScriptCondition>
+                <Conditions/>
+                <MatchAny>false</MatchAny>
+                <Enabled>true</Enabled>
+                <Type>0</Type>
+            </Branch>
+            <Loop name="Loop Through Group Members">
+                <ModTime>1395072275005</ModTime>
+                <LoopType>2</LoopType>
+                <WorkAttributeName>uniqueMember</WorkAttributeName>
+                <LoopAttributeName>memberDNValue</LoopAttributeName>
+                <Branch name="Loop Through Group Members">
+                    <ModTime>1395072275005</ModTime>
+                    <Branch name="Does group contain a CE owned 3PD account ?">
+                        <ModTime>1395072275005</ModTime>
+                        <Script name="ReportUserFound">
+                            <ModTime>1395072275005</ModTime>
+                            <parameter name="enabled">true</parameter>
+                            <parameter name="script">task.logmsg("++Account " + work.eruid + " found in group " + work["$dn"]);</parameter>
+                        </Script>
+                        <ScriptCondition><![CDATA[// Fetch array from object
+var test = accArray[work.memberDNValue];
+//task.logmsg("Lookup uid " + work.getString("UID") + " returns " + test[0]);
+return (test != undefined);]]></ScriptCondition>
+                        <Conditions/>
+                        <MatchAny>false</MatchAny>
+                        <Enabled>true</Enabled>
+                        <Type>0</Type>
+                    </Branch>
+                    <Branch name="Group does not contain CE owned 3PD account">
+                        <ModTime>1395072191142</ModTime>
+                        <Script name="ReportUserMissing">
+                            <ModTime>1395072191142</ModTime>
+                            <parameter name="enabled">true</parameter>
+                            <parameter name="script">task.logmsg("--Account " + work.eruid + " not found in group " + work["$dn"]);</parameter>
+                        </Script>
+                        <Conditions/>
+                        <MatchAny>false</MatchAny>
+                        <Enabled>true</Enabled>
+                        <Type>2</Type>
+                    </Branch>
+                    <Conditions/>
+                    <MatchAny>false</MatchAny>
+                    <Enabled>true</Enabled>
+                    <Type>0</Type>
+                </Branch>
+            </Loop>
+            <Connector name="Read CE owned 3PD accounts">
+                <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                <ModTime>1395148866270</ModTime>
+                <ConnectorMode>AddOnly</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148849296</ModTime>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\3PD Accounts owned by Computing Entities.csv</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                    <ModTime>1395148763972</ModTime>
+                    <parameter name="csvColumnSeparator">,</parameter>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395148585193</ModTime>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395148585193</ModTime>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148585193</ModTime>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148866270</ModTime>
+                    <AttributeMapItem>
+                        <Name>cn</Name>
+                        <Type>simple</Type>
+                        <Simple>cn</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>erpersonstatus</Name>
+                        <Type>simple</Type>
+                        <Simple>erpersonstatus</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>eruid</Name>
+                        <Type>simple</Type>
+                        <Simple>eruid</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>objectclass</Name>
+                        <Type>simple</Type>
+                        <Simple>objectclass</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <DeltaSettings/>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148860737</ModTime>
+                    <SchemaItem>
+                        <Name>PK&#3;&#4;&#20;&#0;&#6;&#0;&#8;&#0;&#0;&#0;!&#0;|l˜&#22;l&#1;&#0;&#0; &#5;&#0;&#0;&#19;&#0;&#8;&#2;[Content_Types].xml ¢&#4;&#2;( &#0;&#2;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;&#0;Ì”]KÃ0&#20;†ï&#5;ÿCÉ­4Ù&amp;ˆÈº]øq©&#3;ç&#15;ˆÍé&#26;–&amp;!'›Û¿÷4û@¤n&#12;&#7;zÓÐæœ÷}’4ïp¼jL¶„€ÚÙ‚õy�e`K§´�&#21;ìmú”ß²&#12;£´J&#26;g¡`k@6&#30;]^&#12;§k&#15;˜Q·Å‚Õ1ú;!°¬¡‘È�&#7;K3•&#11;�Œô&#26;fÂËr.g &#6;½Þ�(��`c&#30;[</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erpersonstatus</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>eruid</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectclass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148860768</ModTime>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>erpersonstatus</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>eruid</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectclass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148585193</ModTime>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395148585193</ModTime>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+        </ContainerDF>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>

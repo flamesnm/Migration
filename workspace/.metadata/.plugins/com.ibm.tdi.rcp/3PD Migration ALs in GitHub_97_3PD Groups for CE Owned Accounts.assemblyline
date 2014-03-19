@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TDI>&#x0A;<Breakpoints>&#x0A;<Breakpoint enabled="false" location="Build DN from uid"/>&#x0A;<Breakpoint enabled="false" location="Read 3PD Groups"/>&#x0A;<Breakpoint enabled="true" location="Log member has no groups"/>&#x0A;</Breakpoints>&#x0A;<WatchList/>&#x0A;<Expressions>memberDN&#x0A;loopGroupMember&#x0A;loopGroupMember;&#x0A;work.loopGroupMember;&#x0A;accountHasGroup&#x0A;</Expressions>&#x0A;</TDI>

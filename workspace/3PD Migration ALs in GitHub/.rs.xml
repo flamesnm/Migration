@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig IDIversion="Created by TDI7.1.1 - 2012-04-23" created="Thu Nov 21 12:32:01 GMT 2013" createdBy="mclon0" modified="Mon Mar 17 10:55:42 GMT 2014" modifiedBy="mclon0" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig IDIversion="Created by TDI7.1.1 - 2012-04-23" created="Thu Nov 21 12:32:01 GMT 2013" createdBy="mclon0" modified="Tue Mar 18 19:33:22 GMT 2014" modifiedBy="mclon0" version="7.1.1">
     <Folder name="AssemblyLines">
         
     
@@ -2213,7 +2213,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
         
         
     <AssemblyLine name="xxx_FRV Derived delta from FRV Provided">
-            <ModTime>1381930852944</ModTime>
+            <ModTime>1395060465118</ModTime>
             <Settings/>
             <Hooks>
                 <ModTime>1381855576404</ModTime>
@@ -2239,23 +2239,23 @@ var accArray = new Object;]]></Script>
                     <Component name="Else_derived_non_FRV_account" state="Enabled"/>
                     <Component name="ReportUserMissing" state="Enabled"/>
                     <Component name="FRV accounts missing" state="Simulated"/>
-                    <Component name="Read_AM_FRV_Accounts" state="Enabled"/>
+                    <Component name="Read_CE_owned_3PD_accounts" state="Enabled"/>
                 </SimulationStates>
                 <ProxySettings/>
             </SimulationConfig>
             <LogConfig/>
             <ContainerEF name="EntryFeedContainer">
-                <ModTime>1381930408275</ModTime>
-                <Connector name="Read_AM_FRV_Accounts">
+                <ModTime>1395060363861</ModTime>
+                <Connector name="Read_CE_owned_3PD_accounts">
                     <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                    <ModTime>1381930408275</ModTime>
+                    <ModTime>1395060363861</ModTime>
                     <ConnectorMode>Iterator</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1381924401157</ModTime>
+                        <ModTime>1395060363861</ModTime>
                         <parameter name="debug">false</parameter>
-                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\FRV Users from Alan\FRVusers.csv</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
                     </Configuration>
                     <Parser>
                         <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
@@ -2546,22 +2546,22 @@ var accArray = new Object;]]></Script>
                 </Connector>
             </ContainerEF>
             <ContainerDF name="DataFlowContainer">
-                <ModTime>1381930852944</ModTime>
+                <ModTime>1395060465118</ModTime>
                 <Branch name="IF_FRV_data_not_loaded">
-                    <ModTime>1381924692720</ModTime>
+                    <ModTime>1395060465118</ModTime>
                     <Loop name="read_derived_frv_accs">
-                        <ModTime>1381924692720</ModTime>
+                        <ModTime>1395060465118</ModTime>
                         <LoopType>1</LoopType>
                         <Connector name="read_derived_frv_accs">
                             <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                            <ModTime>1381924622151</ModTime>
+                            <ModTime>1395060394859</ModTime>
                             <ConnectorMode>Iterator</ConnectorMode>
                             <ConnectorState>Enabled</ConnectorState>
                             <Configuration>
                                 <InheritFrom>[parent]</InheritFrom>
-                                <ModTime>1381924589709</ModTime>
+                                <ModTime>1395060378498</ModTime>
                                 <parameter name="debug">true</parameter>
-                                <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Derived_FRV_Accounts.csv</parameter>
+                                <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\CE owned 3PD accounts.csv</parameter>
                             </Configuration>
                             <Parser>
                                 <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
@@ -2578,11 +2578,16 @@ var accArray = new Object;]]></Script>
                             </Parser>
                             <AttributeMap name="Input">
                                 <InheritFrom>[parent]</InheritFrom>
-                                <ModTime>1381924622151</ModTime>
+                                <ModTime>1395060394859</ModTime>
                                 <AttributeMapItem>
-                                    <Name>uid</Name>
+                                    <Name>cn</Name>
                                     <Type>simple</Type>
-                                    <Simple>uid</Simple>
+                                    <Simple>cn</Simple>
+                                </AttributeMapItem>
+                                <AttributeMapItem>
+                                    <Name>eruid</Name>
+                                    <Type>simple</Type>
+                                    <Simple>eruid</Simple>
                                 </AttributeMapItem>
                             </AttributeMap>
                             <AttributeMap name="Output"/>
@@ -2595,9 +2600,13 @@ var accArray = new Object;]]></Script>
                             </DeltaSettings>
                             <Schema name="Input">
                                 <InheritFrom>[parent]</InheritFrom>
-                                <ModTime>1381924619917</ModTime>
+                                <ModTime>1395060389333</ModTime>
                                 <SchemaItem>
-                                    <Name>uid</Name>
+                                    <Name>cn</Name>
+                                    <Syntax>java.lang.String</Syntax>
+                                </SchemaItem>
+                                <SchemaItem>
+                                    <Name>eruid</Name>
                                     <Syntax>java.lang.String</Syntax>
                                 </SchemaItem>
                             </Schema>
@@ -2646,14 +2655,14 @@ var accArray = new Object;]]></Script>
                             <InitializeOption>0</InitializeOption>
                         </Connector>
                         <Branch name="read_derived_frv_accs">
-                            <ModTime>1381924692720</ModTime>
+                            <ModTime>1395060465118</ModTime>
                             <Script name="Stash_FRV_entry">
-                                <ModTime>1381924692720</ModTime>
+                                <ModTime>1395060465118</ModTime>
                                 <parameter name="script"><![CDATA[// Add the FRV user uid to the uid object
 // This is a javascript object. You set properties like this : object.propertyname="value"
 // retrieve them with object.propertyname;
 
-accArray[work.getString("uid")] = work.getString("uid");]]></parameter>
+accArray[work.eruid] = work.cn;]]></parameter>
                             </Script>
                             <Conditions/>
                             <MatchAny>false</MatchAny>
@@ -6252,7 +6261,7 @@ return (test != undefined);]]></ScriptCondition>
             </InitParams>
         </AssemblyLine>
         <AssemblyLine name="xxx_Set_Password_for_specific_PD0_accounts">
-            <ModTime>1393938509051</ModTime>
+            <ModTime>1395076921776</ModTime>
             <Settings/>
             <Hooks/>
             <CheckpointConfig/>
@@ -6283,23 +6292,23 @@ return (test != undefined);]]></ScriptCondition>
                 <ModTime>1388408828496</ModTime>
             </ContainerEF>
             <ContainerDF name="DataFlowContainer">
-                <ModTime>1393938509051</ModTime>
+                <ModTime>1395076921776</ModTime>
                 <Script name="set_uid">
-                    <ModTime>1393938509051</ModTime>
-                    <parameter name="script">work.setAttribute("uid","authtest200");</parameter>
+                    <ModTime>1395076896094</ModTime>
+                    <parameter name="script">work.setAttribute("uid","-ado-rahma1-xeu");</parameter>
                 </Script>
                 <Connector name="PD1 Staging Set Password to random">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1393414425786</ModTime>
+                    <ModTime>1395076770120</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1385063357921</ModTime>
+                        <ModTime>1395076770120</ModTime>
                         <parameter name="automapADPassword">true</parameter>
                         <parameter name="debug">false</parameter>
                         <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
-                        <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
+                        <parameter name="ldapSearchBase">ou=ado,ou=core,OU=Operational Accounts,DC=pd0,DC=bp,DC=com</parameter>
                         <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
                         <parameter name="ldapUseSSL">true</parameter>
                         <parameter name="ldapUsername">-serv-core-migrate</parameter>
@@ -8142,13 +8151,14 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </Connector>
                 <Connector name="setAccountStatusPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1393414461724</ModTime>
+                    <ModTime>1395076921776</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395076921776</ModTime>
                         <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
-                        <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
+                        <parameter name="ldapSearchBase">ou=ado,ou=core,OU=Operational Accounts,DC=pd0,DC=bp,DC=com</parameter>
                         <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
                         <parameter name="ldapUseSSL">true</parameter>
                         <parameter name="ldapUsername">-serv-core-migrate</parameter>
@@ -8167,11 +8177,11 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393414461724</ModTime>
+                        <ModTime>1395076832810</ModTime>
                         <AttributeMapItem>
                             <Name>bp-Boolean-02</Name>
                             <Type>advanced</Type>
-                            <Enabled>true</Enabled>
+                            <Enabled>false</Enabled>
                             <Script>'TRUE'</Script>
                             <Simple>bp-Boolean-02</Simple>
                         </AttributeMapItem>
@@ -8185,8 +8195,8 @@ task.logmsg("FATAL","-----------------------------------------------------------
                         <AttributeMapItem>
                             <Name>userAccountControl</Name>
                             <Type>advanced</Type>
-                            <Script><![CDATA['514'
-//'512']]></Script>
+                            <Script><![CDATA[//'514'
+'512']]></Script>
                             <Simple>userAccountControl</Simple>
                         </AttributeMapItem>
                     </AttributeMap>
@@ -9965,11 +9975,12 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </LinkCriteria>
                     <Hooks>
                         <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395076858970</ModTime>
                         <Hook name="default_fail">
                             <InheritFrom>[no inheritance]</InheritFrom>
                             <Name>default_fail</Name>
                             <Script><![CDATA[// Log this to log
-task.logmsg("FATAL","+++++ " + thisComponent.getName()+ " Error actioning UID: " + work.uid + " in " + connectorMode + " mode.");
+// task.logmsg("FATAL","+++++ " + thisComponent.getName()+ " Error actioning UID: " + work.uid + " in " + connectorMode + " mode.");
 task.logmsg("FATAL","+++++ " + error.exception + " : " + error.message);
 task.logmsg("FATAL","-------------------------------------------------------------------");]]></Script>
                             <Enabled>true</Enabled>
@@ -10005,10 +10016,10 @@ task.logmsg("FATAL","-----------------------------------------------------------
     
     
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-            <ModTime>1395050601500</ModTime>
+            <ModTime>1395166532247</ModTime>
             <Settings/>
             <Hooks>
-                <ModTime>1395050601500</ModTime>
+                <ModTime>1395053928207</ModTime>
                 <Hook name="epilog">
                     <InheritFrom>[no inheritance]</InheritFrom>
                     <Name>epilog</Name>
@@ -10023,7 +10034,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     <Name>prolog</Name>
                     <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
-var debug=true;
+var debug=false;
 var logToConsole=false;
 var connectorMode="";]]></Script>
                     <Enabled>true</Enabled>
@@ -10058,17 +10069,17 @@ var connectorMode="";]]></Script>
                 </Logger>
             </LogConfig>
             <ContainerEF name="EntryFeedContainer">
-                <ModTime>1393268118131</ModTime>
+                <ModTime>1395166532247</ModTime>
                 <Connector name="read3PDLDIF">
                     <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                    <ModTime>1393268118131</ModTime>
+                    <ModTime>1395166532247</ModTime>
                     <ConnectorMode>Iterator</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393268118131</ModTime>
+                        <ModTime>1395166532247</ModTime>
                         <parameter name="exclusiveLock">false</parameter>
-                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
                     </Configuration>
                     <Parser>
                         <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -10084,7 +10095,7 @@ var connectorMode="";]]></Script>
                     </Parser>
                     <AttributeMap name="Input">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1392906744631</ModTime>
+                        <ModTime>1395160670177</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>simple</Type>
@@ -10119,6 +10130,11 @@ var connectorMode="";]]></Script>
                             <Name>mail</Name>
                             <Type>simple</Type>
                             <Simple>mail</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>mobile</Name>
+                            <Type>simple</Type>
+                            <Simple>mobile</Simple>
                         </AttributeMapItem>
                         <AttributeMapItem>
                             <Name>nsaccountlock</Name>
@@ -17783,14 +17799,7 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
 } else {
 	ret.value=false;
 }]]></ScriptCondition>
-                    <Conditions>
-                        <BranchCondition>
-                            <LeftHand/>
-                            <Operator>equals</Operator>
-                            <RightHand/>
-                            <MatchAny>false</MatchAny>
-                        </BranchCondition>
-                    </Conditions>
+                    <Conditions/>
                     <MatchAny>false</MatchAny>
                     <Enabled>true</Enabled>
                     <Type>0</Type>
@@ -17803,14 +17812,14 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
             </InitParams>
         </AssemblyLine>
         <AssemblyLine name="02_Migrate 3PD LDIF Groups - Objects only">
-            <ModTime>1395050523355</ModTime>
+            <ModTime>1395169196397</ModTime>
             <Settings/>
             <Hooks>
-                <ModTime>1395050523355</ModTime>
+                <ModTime>1395054038033</ModTime>
                 <Hook name="prolog">
                     <InheritFrom>[no inheritance]</InheritFrom>
                     <Name>prolog</Name>
-                    <Script>var debug=true;</Script>
+                    <Script>var debug=false;</Script>
                     <Enabled>true</Enabled>
                 </Hook>
             </Hooks>
@@ -17825,6 +17834,7 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
                     <Component name="setCNandDN" state="Enabled"/>
                     <Component name="LDAP - Add Group to PD1" state="Simulated"/>
                     <Component name="Log migrated groups" state="Enabled"/>
+                    <Component name="groupLogs" state="Simulated"/>
                     <Component name="If DEBUG" state="Enabled"/>
                     <Component name="deleteJustActionedPD1GroupTestOnly" state="Simulated"/>
                     <Component name="FileConnector" state="Enabled"/>
@@ -17845,17 +17855,17 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
                 </Logger>
             </LogConfig>
             <ContainerEF name="EntryFeedContainer">
-                <ModTime>1393433704706</ModTime>
+                <ModTime>1395169196397</ModTime>
                 <Connector name="FileConnector">
                     <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                    <ModTime>1393433704706</ModTime>
+                    <ModTime>1395169196397</ModTime>
                     <ConnectorMode>Iterator</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1392914522483</ModTime>
+                        <ModTime>1395169196397</ModTime>
                         <parameter name="exclusiveLock">false</parameter>
-                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
                     </Configuration>
                     <Parser>
                         <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -17868,7 +17878,7 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
                     </Parser>
                     <AttributeMap name="Input">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393426850878</ModTime>
+                        <ModTime>1395082230284</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>simple</Type>
@@ -17878,6 +17888,11 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
                             <Name>objectClass</Name>
                             <Type>simple</Type>
                             <Simple>objectClass</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>uniquemember</Name>
+                            <Type>simple</Type>
+                            <Simple>uniquemember</Simple>
                         </AttributeMapItem>
                     </AttributeMap>
                     <AttributeMap name="Output">
@@ -18323,7 +18338,7 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
                 </Connector>
             </ContainerEF>
             <ContainerDF name="DataFlowContainer">
-                <ModTime>1393433959487</ModTime>
+                <ModTime>1395083911423</ModTime>
                 <Script name="setParameters">
                     <ModTime>1393433935081</ModTime>
                     <parameter name="script">var isTargetGroup=false;</parameter>
@@ -18353,7 +18368,7 @@ if(typeString=="groupofuniquenames" || typeString=="3pdgroup"){
                     </Branch>
                 </Loop>
                 <Branch name="IF GROUP Object">
-                    <ModTime>1393433909077</ModTime>
+                    <ModTime>1395083911423</ModTime>
                     <Script name="setCNandDN">
                         <ModTime>1393432690433</ModTime>
                         <parameter name="script"><![CDATA[var temp = work.$dn[0]
@@ -18635,6 +18650,94 @@ system.skipEntry();]]></Script>
 task.logmsg("FATAL","***** " + thisComponent.getName() + "Group " + work.$dn + " migrated successfully");
 task.logmsg("FATAL","-------------------------------------------------------------------");]]></parameter>
                     </Script>
+                    <Connector name="groupLogs">
+                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                        <ModTime>1395083911423</ModTime>
+                        <ConnectorMode>AddOnly</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082182289</ModTime>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Full 3PD Groups from LDIF.csv</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                            <ModTime>1395083911423</ModTime>
+                            <parameter name="csvColumnSeparator">;</parameter>
+                            <parameter name="csvColumns"><![CDATA[$dn
+members]]></parameter>
+                            <parameter name="csvEnableQuoting">false</parameter>
+                            <parameter name="csvQuoteAllFields">true</parameter>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395082144917</ModTime>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395082144917</ModTime>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082144917</ModTime>
+                        </AttributeMap>
+                        <AttributeMap name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395083607993</ModTime>
+                            <AttributeMapItem>
+                                <Name>$dn</Name>
+                                <Type>simple</Type>
+                                <Simple>$dn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>members</Name>
+                                <Type>advanced</Type>
+                                <Script><![CDATA[var Array = work.getAttribute("uniquemember");
+var String = "";
+
+if (Array !=null && Array.size()>0)
+{
+String = "'" + Array.getValue(0);
+for (i=1;i<Array.size();i++)
+{
+var role = Array.getValue(i);
+String = String + ";" + role;
+}
+}
+String = String + "'"
+return String]]></Script>
+                                <Simple>uniquemember</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <DeltaSettings/>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082144917</ModTime>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082144917</ModTime>
+                        </Schema>
+                        <LinkCriteria>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082144917</ModTime>
+                        </LinkCriteria>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395082144917</ModTime>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
                     <Branch name="If DEBUG">
                         <ModTime>1393432936209</ModTime>
                         <Connector name="deleteJustActionedPD1GroupTestOnly">
@@ -20501,7 +20604,7 @@ return debug;]]></ScriptCondition>
             </InitParams>
         </AssemblyLine>
         <AssemblyLine name="03_Set PD1 Group Membership Based on 3PD LDIF Group member values">
-            <ModTime>1393437238476</ModTime>
+            <ModTime>1395169470757</ModTime>
             <Settings/>
             <Hooks>
                 <ModTime>1388422206951</ModTime>
@@ -20540,17 +20643,17 @@ return debug;]]></ScriptCondition>
                 </Logger>
             </LogConfig>
             <ContainerEF name="EntryFeedContainer">
-                <ModTime>1393437238476</ModTime>
+                <ModTime>1395169470757</ModTime>
                 <Connector name="FileConnector">
                     <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                    <ModTime>1393437238476</ModTime>
+                    <ModTime>1395169470757</ModTime>
                     <ConnectorMode>Iterator</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1392915659585</ModTime>
+                        <ModTime>1395169470757</ModTime>
                         <parameter name="exclusiveLock">false</parameter>
-                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
                     </Configuration>
                     <Parser>
                         <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -55411,6 +55514,1379 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </PoolDefinition>
                     <PoolInstance/>
                 </Connector>
+            </ContainerDF>
+            <ThreadOptions/>
+            <Operations/>
+            <InitParams>
+                <Schema name="AssemblyLineInitParams"/>
+            </InitParams>
+        </AssemblyLine>
+    
+        <AssemblyLine name="99_Iterate 3PD Accounts Output to CSV">
+            <ModTime>1395079640254</ModTime>
+            <Settings/>
+            <Hooks/>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <SimulationConfig>
+                <SimulationStates>
+                    <Component name="IF 3PD User object" state="Enabled"/>
+                    <Component name="FileConnector" state="Simulated"/>
+                    <Component name="read3PDLDIF" state="Enabled"/>
+                </SimulationStates>
+                <ProxySettings/>
+            </SimulationConfig>
+            <LogConfig/>
+            <ContainerEF name="EntryFeedContainer">
+                <ModTime>1395079602009</ModTime>
+                <Connector name="read3PDLDIF">
+                    <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                    <ModTime>1395079602009</ModTime>
+                    <ConnectorMode>Iterator</ConnectorMode>
+                    <ConnectorState>Enabled</ConnectorState>
+                    <Configuration>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <parameter name="exclusiveLock">false</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                    </Configuration>
+                    <Parser>
+                        <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Schema>
+                    </Parser>
+                    <AttributeMap name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395079577733</ModTime>
+                        <AttributeMapItem>
+                            <Name>$dn</Name>
+                            <Type>simple</Type>
+                            <Simple>$dn</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>accounting</Name>
+                            <Type>simple</Type>
+                            <Simple>accounting</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>address</Name>
+                            <Type>simple</Type>
+                            <Simple>address</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>businessCategory</Name>
+                            <Type>simple</Type>
+                            <Simple>businessCategory</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>city</Name>
+                            <Type>simple</Type>
+                            <Simple>city</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>cn</Name>
+                            <Type>simple</Type>
+                            <Simple>cn</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>country</Name>
+                            <Type>simple</Type>
+                            <Simple>country</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>createTimestamp</Name>
+                            <Type>simple</Type>
+                            <Simple>createTimestamp</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>creatorsName</Name>
+                            <Type>simple</Type>
+                            <Simple>creatorsName</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>displayName</Name>
+                            <Type>simple</Type>
+                            <Simple>displayName</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>givenName</Name>
+                            <Type>simple</Type>
+                            <Simple>givenName</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>gpid</Name>
+                            <Type>simple</Type>
+                            <Simple>gpid</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>isAdminSetPassword</Name>
+                            <Type>simple</Type>
+                            <Simple>isAdminSetPassword</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>issapuser</Name>
+                            <Type>simple</Type>
+                            <Simple>issapuser</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>mail</Name>
+                            <Type>simple</Type>
+                            <Simple>mail</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>memberOf</Name>
+                            <Type>simple</Type>
+                            <Simple>memberOf</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>mobile</Name>
+                            <Type>simple</Type>
+                            <Simple>mobile</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>modifiersName</Name>
+                            <Type>simple</Type>
+                            <Simple>modifiersName</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>modifyTimestamp</Name>
+                            <Type>simple</Type>
+                            <Simple>modifyTimestamp</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>nsaccountlock</Name>
+                            <Type>simple</Type>
+                            <Simple>nsaccountlock</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>objectClass</Name>
+                            <Type>simple</Type>
+                            <Simple>objectClass</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>passwordRetryCount</Name>
+                            <Type>simple</Type>
+                            <Simple>passwordRetryCount</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>postalCode</Name>
+                            <Type>simple</Type>
+                            <Simple>postalCode</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>preferredLanguage</Name>
+                            <Type>simple</Type>
+                            <Simple>preferredLanguage</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>pwdChangedTime</Name>
+                            <Type>simple</Type>
+                            <Simple>pwdChangedTime</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>pwdFailureTime</Name>
+                            <Type>simple</Type>
+                            <Simple>pwdFailureTime</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>pwdHistory</Name>
+                            <Type>simple</Type>
+                            <Simple>pwdHistory</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>securityanswers</Name>
+                            <Type>simple</Type>
+                            <Simple>securityanswers</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>securityquestions</Name>
+                            <Type>simple</Type>
+                            <Simple>securityquestions</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>securityquestionsanswered</Name>
+                            <Type>simple</Type>
+                            <Simple>securityquestionsanswered</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>sn</Name>
+                            <Type>simple</Type>
+                            <Simple>sn</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>telephoneNumber</Name>
+                            <Type>simple</Type>
+                            <Simple>telephoneNumber</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>title</Name>
+                            <Type>simple</Type>
+                            <Simple>title</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>uid</Name>
+                            <Type>simple</Type>
+                            <Simple>uid</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>userPassword</Name>
+                            <Type>simple</Type>
+                            <Simple>userPassword</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>uuid</Name>
+                            <Type>simple</Type>
+                            <Simple>uuid</Simple>
+                        </AttributeMapItem>
+                    </AttributeMap>
+                    <AttributeMap name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </AttributeMap>
+                    <DeltaSettings>
+                        <UniqueAttribute/>
+                        <WhenToCommit>After every database operation</WhenToCommit>
+                        <RowLocking>SERIALIZABLE</RowLocking>
+                        <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                    </DeltaSettings>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395079601978</ModTime>
+                        <SchemaItem>
+                            <Name>$dn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>accounting</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>address</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>businessCategory</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>city</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>cn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>country</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>createTimestamp</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>creatorsName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>displayName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>givenName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>gpid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>isAdminSetPassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>isadminsetpassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>issapuser</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mail</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>memberOf</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>memberof</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mobile</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>modifiersName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>modifyTimestamp</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>nsaccountlock</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectClass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectclass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>passwordRetryCount</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>postalCode</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>preferredLanguage</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdChangedTime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdFailureTime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdHistory</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityanswers</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityquestions</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityquestionsanswered</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>telephoneNumber</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>title</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>userPassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uuid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395079602009</ModTime>
+                        <SchemaItem>
+                            <Name>$dn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>accounting</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>address</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>businessCategory</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>city</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>cn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>country</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>createTimestamp</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>creatorsName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>description</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>displayName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>displayname</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>givenName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>givenname</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>gpid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>isAdminSetPassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>isadminsetpassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>issapuser</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mail</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>memberOf</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>memberof</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>mobile</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>modifiersName</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>modifyTimestamp</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>nsaccountlock</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>o</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectClass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectclass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>ou</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>passwordRetryCount</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>postalCode</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>preferredLanguage</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdChangedTime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdFailureTime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdHistory</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdchangedtime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>pwdhistory</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>retrycountresettime</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityanswers</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityquestions</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>securityquestionsanswered</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>sn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>telephoneNumber</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>title</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uniqueMember</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uniquemember</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>userPassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>userpassword</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>uuid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <LinkCriteria>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </LinkCriteria>
+                    <Hooks>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <Hook name="after_initialize">
+                            <InheritFrom>[no inheritance]</InheritFrom>
+                            <Name>after_initialize</Name>
+                            <Script/>
+                            <Enabled>false</Enabled>
+                        </Hook>
+                    </Hooks>
+                    <CheckpointConfig/>
+                    <SandboxConfig/>
+                    <Reconnect>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ReconnectRules/>
+                    </Reconnect>
+                    <Operations/>
+                    <PoolDefinition>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </PoolDefinition>
+                    <PoolInstance/>
+                </Connector>
+            </ContainerEF>
+            <ContainerDF name="DataFlowContainer">
+                <ModTime>1395079640254</ModTime>
+                <Branch name="IF 3PD User object">
+                    <ModTime>1395079640254</ModTime>
+                    <Connector name="FileConnector">
+                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                        <ModTime>1395079640254</ModTime>
+                        <ConnectorMode>AddOnly</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079140828</ModTime>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\3PD Production Accounts.csv</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                            <ModTime>1395079038715</ModTime>
+                            <parameter name="csvColumnSeparator">,</parameter>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395079004289</ModTime>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395079004289</ModTime>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079004289</ModTime>
+                        </AttributeMap>
+                        <AttributeMap name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079640254</ModTime>
+                            <AttributeMapItem>
+                                <Name>$dn</Name>
+                                <Type>simple</Type>
+                                <Simple>$dn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>accounting</Name>
+                                <Type>simple</Type>
+                                <Simple>accounting</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>address</Name>
+                                <Type>simple</Type>
+                                <Simple>address</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>businessCategory</Name>
+                                <Type>simple</Type>
+                                <Simple>businessCategory</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>city</Name>
+                                <Type>simple</Type>
+                                <Simple>city</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>cn</Name>
+                                <Type>simple</Type>
+                                <Simple>cn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>country</Name>
+                                <Type>simple</Type>
+                                <Simple>country</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>createTimestamp</Name>
+                                <Type>simple</Type>
+                                <Simple>createTimestamp</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>creatorsName</Name>
+                                <Type>simple</Type>
+                                <Simple>creatorsName</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>displayName</Name>
+                                <Type>simple</Type>
+                                <Simple>displayName</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>givenName</Name>
+                                <Type>simple</Type>
+                                <Simple>givenName</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>gpid</Name>
+                                <Type>simple</Type>
+                                <Simple>gpid</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>isAdminSetPassword</Name>
+                                <Type>simple</Type>
+                                <Simple>isAdminSetPassword</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>issapuser</Name>
+                                <Type>simple</Type>
+                                <Simple>issapuser</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>mail</Name>
+                                <Type>simple</Type>
+                                <Simple>mail</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>memberOf</Name>
+                                <Type>simple</Type>
+                                <Simple>memberOf</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>mobile</Name>
+                                <Type>simple</Type>
+                                <Simple>mobile</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>modifiersName</Name>
+                                <Type>simple</Type>
+                                <Simple>modifiersName</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>modifyTimestamp</Name>
+                                <Type>simple</Type>
+                                <Simple>modifyTimestamp</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>nsaccountlock</Name>
+                                <Type>simple</Type>
+                                <Simple>nsaccountlock</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>objectClass</Name>
+                                <Type>simple</Type>
+                                <Simple>objectClass</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>passwordRetryCount</Name>
+                                <Type>simple</Type>
+                                <Simple>passwordRetryCount</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>postalCode</Name>
+                                <Type>simple</Type>
+                                <Simple>postalCode</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>preferredLanguage</Name>
+                                <Type>simple</Type>
+                                <Simple>preferredLanguage</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>pwdChangedTime</Name>
+                                <Type>simple</Type>
+                                <Simple>pwdChangedTime</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>pwdFailureTime</Name>
+                                <Type>simple</Type>
+                                <Simple>pwdFailureTime</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>pwdHistory</Name>
+                                <Type>simple</Type>
+                                <Simple>pwdHistory</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>securityanswers</Name>
+                                <Type>simple</Type>
+                                <Simple>securityanswers</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>securityquestions</Name>
+                                <Type>simple</Type>
+                                <Simple>securityquestions</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>securityquestionsanswered</Name>
+                                <Type>simple</Type>
+                                <Simple>securityquestionsanswered</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>sn</Name>
+                                <Type>simple</Type>
+                                <Simple>sn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>telephoneNumber</Name>
+                                <Type>simple</Type>
+                                <Simple>telephoneNumber</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>title</Name>
+                                <Type>simple</Type>
+                                <Simple>title</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>uid</Name>
+                                <Type>simple</Type>
+                                <Simple>uid</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>userPassword</Name>
+                                <Type>simple</Type>
+                                <Simple>userPassword</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>uuid</Name>
+                                <Type>simple</Type>
+                                <Simple>uuid</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <DeltaSettings/>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079004289</ModTime>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079004289</ModTime>
+                        </Schema>
+                        <LinkCriteria>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079004289</ModTime>
+                        </LinkCriteria>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395079004289</ModTime>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
+                    <ScriptCondition><![CDATA[//Check whether this object is in the users container - don't migrate service accounts
+// dns are in camel and lower case only, hence use of toLowerCase()
+if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=directories") != -1) {
+	ret.value=true;
+} else {
+	ret.value=false;
+}]]></ScriptCondition>
+                    <Conditions/>
+                    <MatchAny>false</MatchAny>
+                    <Enabled>true</Enabled>
+                    <Type>0</Type>
+                </Branch>
+            </ContainerDF>
+            <ThreadOptions/>
+            <Operations/>
+            <InitParams>
+                <Schema name="AssemblyLineInitParams"/>
+            </InitParams>
+        </AssemblyLine>
+    
+    <AssemblyLine name="97_3PD Groups for CE Owned Accounts">
+            <ModTime>1395155465497</ModTime>
+            <Settings/>
+            <Hooks>
+                <ModTime>1381855576404</ModTime>
+                <Hook name="prolog">
+                    <InheritFrom>[no inheritance]</InheritFrom>
+                    <Name>prolog</Name>
+                    <Script><![CDATA[// Create an object to use as associative array
+var accArray = new Object;]]></Script>
+                    <Enabled>true</Enabled>
+                </Hook>
+            </Hooks>
+            <CheckpointConfig/>
+            <SandboxConfig/>
+            <SimulationConfig>
+                <SimulationStates>
+                    <Component name="Build DN from uid" state="Enabled"/>
+                    <Component name="Read 3PD Groups" state="Enabled"/>
+                    <Component name="AttributeValueLoop" state="Enabled"/>
+                    <Component name="group has DN as a member" state="Enabled"/>
+                    <Component name="Log member and group" state="Simulated"/>
+                    <Component name="Set Accounts as owning at least one account" state="Enabled"/>
+                    <Component name="User has no groups" state="Enabled"/>
+                    <Component name="Log member has no groups" state="Simulated"/>
+                    <Component name="Read 3PD Accounts owned by CE" state="Simulated"/>
+                </SimulationStates>
+                <ProxySettings/>
+            </SimulationConfig>
+            <LogConfig/>
+            <ContainerEF name="EntryFeedContainer">
+                <ModTime>1395155341573</ModTime>
+                <Connector name="Read 3PD Accounts owned by CE">
+                    <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                    <ModTime>1395155341573</ModTime>
+                    <ConnectorMode>Iterator</ConnectorMode>
+                    <ConnectorState>Enabled</ConnectorState>
+                    <Configuration>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395155341573</ModTime>
+                        <parameter name="debug">true</parameter>
+                        <parameter name="filePath">C:\Users\mclon0\Desktop\3PD Accounts owned by Computing Entities.csv</parameter>
+                    </Configuration>
+                    <Parser>
+                        <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                        <ModTime>1395148938447</ModTime>
+                        <parameter name="csvColumnSeparator">,</parameter>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395148910032</ModTime>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395148910032</ModTime>
+                        </Schema>
+                    </Parser>
+                    <AttributeMap name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395149081535</ModTime>
+                        <AttributeMapItem>
+                            <Name>cn</Name>
+                            <Type>simple</Type>
+                            <Simple>cn</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>erpersonstatus</Name>
+                            <Type>simple</Type>
+                            <Simple>erpersonstatus</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>eruid</Name>
+                            <Type>simple</Type>
+                            <Simple>eruid</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>objectclass</Name>
+                            <Type>simple</Type>
+                            <Simple>objectclass</Simple>
+                        </AttributeMapItem>
+                    </AttributeMap>
+                    <AttributeMap name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395148910032</ModTime>
+                    </AttributeMap>
+                    <DeltaSettings>
+                        <ModTime>1395149081551</ModTime>
+                        <UniqueAttribute/>
+                        <WhenToCommit>After every database operation</WhenToCommit>
+                        <RowLocking>SERIALIZABLE</RowLocking>
+                        <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                    </DeltaSettings>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395149078644</ModTime>
+                        <SchemaItem>
+                            <Name>cn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>erpersonstatus</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>eruid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectclass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395149078675</ModTime>
+                        <SchemaItem>
+                            <Name>cn</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>erpersonstatus</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>eruid</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                        <SchemaItem>
+                            <Name>objectclass</Name>
+                            <Syntax>java.lang.String</Syntax>
+                        </SchemaItem>
+                    </Schema>
+                    <LinkCriteria>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395148910032</ModTime>
+                    </LinkCriteria>
+                    <Hooks>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ModTime>1395148910032</ModTime>
+                    </Hooks>
+                    <CheckpointConfig/>
+                    <SandboxConfig/>
+                    <Reconnect>
+                        <InheritFrom>[parent]</InheritFrom>
+                        <ReconnectRules/>
+                    </Reconnect>
+                    <Operations/>
+                    <PoolDefinition>
+                        <InheritFrom>[parent]</InheritFrom>
+                    </PoolDefinition>
+                    <PoolInstance/>
+                </Connector>
+            </ContainerEF>
+            <ContainerDF name="DataFlowContainer">
+                <ModTime>1395155465497</ModTime>
+                <Script name="Build DN from uid">
+                    <ModTime>1395155328027</ModTime>
+                    <parameter name="script"><![CDATA[var memberDN = "uid=" + work.eruid + ",ou=Users,cn=3PD,ou=Proxy,O=directories";
+var accountHasGroup = false;
+
+task.logmsg("Processing eruid: " + work.eruid );]]></parameter>
+                </Script>
+                <Loop name="Read 3PD Groups">
+                    <ModTime>1395155465497</ModTime>
+                    <LoopType>1</LoopType>
+                    <Connector name="Read 3PD Groups">
+                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                        <ModTime>1395149286298</ModTime>
+                        <ConnectorMode>Iterator</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395149243811</ModTime>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104_GROUPS.ldif</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
+                            <ModTime>1395149249390</ModTime>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395149286298</ModTime>
+                            <AttributeMapItem>
+                                <Name>$dn</Name>
+                                <Type>simple</Type>
+                                <Simple>$dn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>cn</Name>
+                                <Type>simple</Type>
+                                <Simple>cn</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>objectClass</Name>
+                                <Type>simple</Type>
+                                <Simple>objectClass</Simple>
+                            </AttributeMapItem>
+                            <AttributeMapItem>
+                                <Name>uniqueMember</Name>
+                                <Type>simple</Type>
+                                <Simple>uniqueMember</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <AttributeMap name="Output"/>
+                        <DeltaSettings>
+                            <ModTime>1395149273110</ModTime>
+                            <UniqueAttribute/>
+                            <WhenToCommit>After every database operation</WhenToCommit>
+                            <RowLocking>SERIALIZABLE</RowLocking>
+                            <ChangeDetectionMode>DETECT_ALL</ChangeDetectionMode>
+                        </DeltaSettings>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395149266251</ModTime>
+                            <SchemaItem>
+                                <Name>$dn</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>cn</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>createTimestamp</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>creatorsName</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>modifiersName</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>modifyTimestamp</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>objectClass</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>uniqueMember</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>uuid</Name>
+                                <Syntax>java.lang.String</Syntax>
+                            </SchemaItem>
+                        </Schema>
+                        <Schema name="Output">
+                            <UserComment>{extsyntax=TEXTAREA, name=userComment}</UserComment>
+                            <InheritFrom>[no inheritance]</InheritFrom>
+                            <ModTime>1395149208476</ModTime>
+                            <SchemaItem>
+                                <Name>debug</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>exclusiveLock</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAppend</Name>
+                                <NativeSyntax>boolean</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>fileAwaitDataTimeout</Name>
+                                <NativeSyntax>DROPEDIT</NativeSyntax>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>filePath</Name>
+                            </SchemaItem>
+                            <SchemaItem>
+                                <Name>userComment</Name>
+                                <NativeSyntax>TEXTAREA</NativeSyntax>
+                            </SchemaItem>
+                        </Schema>
+                        <LinkCriteria/>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
+                    <Branch name="Read 3PD Groups">
+                        <ModTime>1395155465497</ModTime>
+                        <Loop name="AttributeValueLoop">
+                            <ModTime>1395155465497</ModTime>
+                            <LoopType>2</LoopType>
+                            <WorkAttributeName>uniquemember</WorkAttributeName>
+                            <LoopAttributeName>loopGroupMember</LoopAttributeName>
+                            <Branch name="AttributeValueLoop">
+                                <ModTime>1395155465497</ModTime>
+                                <Branch name="group has DN as a member">
+                                    <ModTime>1395155465497</ModTime>
+                                    <Connector name="Log member and group">
+                                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                                        <ModTime>1395155465497</ModTime>
+                                        <ConnectorMode>AddOnly</ConnectorMode>
+                                        <ConnectorState>Enabled</ConnectorState>
+                                        <Configuration>
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149764487</ModTime>
+                                            <parameter name="filePath">C:\Users\mclon0\Desktop\3PD Accounts Group Memberships.csv</parameter>
+                                        </Configuration>
+                                        <Parser>
+                                            <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                                            <ModTime>1395155465497</ModTime>
+                                            <parameter name="csvColumnSeparator">,</parameter>
+                                            <parameter name="csvColumns"><![CDATA[loopGroupMember
+cn
+]]></parameter>
+                                            <parameter name="csvQuoteAllFields">true</parameter>
+                                            <Schema name="Input">
+                                                <InheritFrom>[parent]</InheritFrom>
+                                                <ModTime>1395149625153</ModTime>
+                                            </Schema>
+                                            <Schema name="Output">
+                                                <InheritFrom>[parent]</InheritFrom>
+                                                <ModTime>1395149625153</ModTime>
+                                            </Schema>
+                                        </Parser>
+                                        <AttributeMap name="Input">
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149625153</ModTime>
+                                        </AttributeMap>
+                                        <AttributeMap name="Output">
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149876968</ModTime>
+                                            <AttributeMapItem>
+                                                <Name>cn</Name>
+                                                <Type>simple</Type>
+                                                <Simple>cn</Simple>
+                                            </AttributeMapItem>
+                                            <AttributeMapItem>
+                                                <Name>loopGroupMember</Name>
+                                                <Type>simple</Type>
+                                                <Simple>loopGroupMember</Simple>
+                                            </AttributeMapItem>
+                                        </AttributeMap>
+                                        <DeltaSettings/>
+                                        <Schema name="Input">
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149625153</ModTime>
+                                        </Schema>
+                                        <Schema name="Output">
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149625153</ModTime>
+                                        </Schema>
+                                        <LinkCriteria>
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149625153</ModTime>
+                                        </LinkCriteria>
+                                        <Hooks>
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ModTime>1395149625153</ModTime>
+                                        </Hooks>
+                                        <CheckpointConfig/>
+                                        <SandboxConfig/>
+                                        <Reconnect>
+                                            <InheritFrom>[parent]</InheritFrom>
+                                            <ReconnectRules/>
+                                        </Reconnect>
+                                        <Operations/>
+                                        <PoolDefinition>
+                                            <InheritFrom>[parent]</InheritFrom>
+                                        </PoolDefinition>
+                                        <PoolInstance/>
+                                    </Connector>
+                                    <Script name="Set Accounts as owning at least one account">
+                                        <ModTime>1395150381827</ModTime>
+                                        <parameter name="script">accountHasGroup = true;</parameter>
+                                    </Script>
+                                    <ScriptCondition><![CDATA[if(work.loopGroupMember == memberDN) {
+	return true
+} else {
+	return false
+}]]></ScriptCondition>
+                                    <Conditions/>
+                                    <MatchAny>false</MatchAny>
+                                    <Enabled>true</Enabled>
+                                    <Type>0</Type>
+                                </Branch>
+                                <Conditions/>
+                                <MatchAny>false</MatchAny>
+                                <Enabled>true</Enabled>
+                                <Type>0</Type>
+                            </Branch>
+                        </Loop>
+                        <Conditions/>
+                        <MatchAny>false</MatchAny>
+                        <Enabled>true</Enabled>
+                        <Type>0</Type>
+                    </Branch>
+                </Loop>
+                <Branch name="User has no groups">
+                    <ModTime>1395155249239</ModTime>
+                    <Connector name="Log member has no groups">
+                        <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
+                        <ModTime>1395150533834</ModTime>
+                        <ConnectorMode>AddOnly</ConnectorMode>
+                        <ConnectorState>Enabled</ConnectorState>
+                        <Configuration>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150502509</ModTime>
+                            <parameter name="filePath">C:\Users\mclon0\Desktop\3PD Accounts have no groups.csv</parameter>
+                        </Configuration>
+                        <Parser>
+                            <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
+                            <ModTime>1395150533834</ModTime>
+                            <Schema name="Input">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395150451862</ModTime>
+                            </Schema>
+                            <Schema name="Output">
+                                <InheritFrom>[parent]</InheritFrom>
+                                <ModTime>1395150451862</ModTime>
+                            </Schema>
+                        </Parser>
+                        <AttributeMap name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150451862</ModTime>
+                        </AttributeMap>
+                        <AttributeMap name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150519639</ModTime>
+                            <AttributeMapItem>
+                                <Name>eruid</Name>
+                                <Type>simple</Type>
+                                <Simple>eruid</Simple>
+                            </AttributeMapItem>
+                        </AttributeMap>
+                        <DeltaSettings/>
+                        <Schema name="Input">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150451862</ModTime>
+                        </Schema>
+                        <Schema name="Output">
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150451862</ModTime>
+                        </Schema>
+                        <LinkCriteria>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150451862</ModTime>
+                        </LinkCriteria>
+                        <Hooks>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ModTime>1395150451862</ModTime>
+                        </Hooks>
+                        <CheckpointConfig/>
+                        <SandboxConfig/>
+                        <Reconnect>
+                            <InheritFrom>[parent]</InheritFrom>
+                            <ReconnectRules/>
+                        </Reconnect>
+                        <Operations/>
+                        <PoolDefinition>
+                            <InheritFrom>[parent]</InheritFrom>
+                        </PoolDefinition>
+                        <PoolInstance/>
+                    </Connector>
+                    <ScriptCondition>return !accountHasGroup</ScriptCondition>
+                    <Conditions/>
+                    <MatchAny>false</MatchAny>
+                    <Enabled>true</Enabled>
+                    <Type>0</Type>
+                </Branch>
             </ContainerDF>
             <ThreadOptions/>
             <Operations/>

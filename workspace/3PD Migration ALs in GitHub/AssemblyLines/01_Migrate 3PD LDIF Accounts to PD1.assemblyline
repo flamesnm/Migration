@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="314" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Mon Mar 17 10:03:21 GMT 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="318" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Tue Mar 18 18:15:35 GMT 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1395050601500</ModTime>
+        <ModTime>1395166532247</ModTime>
         <Settings/>
         <Hooks>
-            <ModTime>1395050601500</ModTime>
+            <ModTime>1395053928207</ModTime>
             <Hook name="epilog">
                 <InheritFrom>[no inheritance]</InheritFrom>
                 <Name>epilog</Name>
@@ -15,11 +15,10 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
-                <ModTime>1395050601500</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
-var debug=true;
+var debug=false;
 var logToConsole=false;
 var connectorMode="";]]></Script>
                 <Enabled>true</Enabled>
@@ -54,17 +53,17 @@ var connectorMode="";]]></Script>
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1393268118131</ModTime>
+            <ModTime>1395166532247</ModTime>
             <Connector name="read3PDLDIF">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1393268118131</ModTime>
+                <ModTime>1395166532247</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1393268118131</ModTime>
+                    <ModTime>1395166532247</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\O-DIrectories-BAckup-10Feb2104.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -80,7 +79,7 @@ var connectorMode="";]]></Script>
                 </Parser>
                 <AttributeMap name="Input">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1392906744631</ModTime>
+                    <ModTime>1395160670177</ModTime>
                     <AttributeMapItem>
                         <Name>$dn</Name>
                         <Type>simple</Type>
@@ -115,6 +114,11 @@ var connectorMode="";]]></Script>
                         <Name>mail</Name>
                         <Type>simple</Type>
                         <Simple>mail</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>mobile</Name>
+                        <Type>simple</Type>
+                        <Simple>mobile</Simple>
                     </AttributeMapItem>
                     <AttributeMapItem>
                         <Name>nsaccountlock</Name>
@@ -7779,14 +7783,7 @@ if(work.getString("$dn").toLowerCase().indexOf("ou=users,cn=3pd,ou=proxy,o=direc
 } else {
 	ret.value=false;
 }]]></ScriptCondition>
-                <Conditions>
-                    <BranchCondition>
-                        <LeftHand/>
-                        <Operator>equals</Operator>
-                        <RightHand/>
-                        <MatchAny>false</MatchAny>
-                    </BranchCondition>
-                </Conditions>
+                <Conditions/>
                 <MatchAny>false</MatchAny>
                 <Enabled>true</Enabled>
                 <Type>0</Type>
