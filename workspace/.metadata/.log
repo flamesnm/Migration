@@ -2748,3 +2748,1630 @@ java.lang.IllegalStateException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+!SESSION 2014-03-19 14:28:10.815 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=JRE 1.6.0 IBM J9 2.4 Windows 7 amd64-64 jvmwa6460sr10-20111207_96808 (JIT enabled, AOT enabled)
+J9VM - 20111207_096808
+JIT  - r9_20111107_21307ifx1
+GC   - 20110519_AA
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:28:49.541
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:28:49.666
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:28:52.525
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:28:52.650
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:28:57.729
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:28:57.838
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:29:25.451
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:29:25.576
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:29:31.748
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:29:31.857
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 14:29:40.123
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 14:29:40.248
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.603
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.618
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.618
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.618
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.618
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.618
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.868
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.883
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.883
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.883
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:00.883
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:00.883
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:05.779
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:05.779
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:05.795
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:05.795
+!MESSAGE CTGDKE102E AssemblyLines/035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:05.888
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:05.888
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:05.888
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:05.888
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:30:05.888
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:30:05.888
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2014-03-19 14:33:27.163
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2014-03-19 14:33:27.163
+!MESSAGE Conflict for 'com.ibm.tdi.rcp.discoverSchema':
+HandlerActivation(commandId=com.ibm.tdi.rcp.discoverSchema,
+	handler=ActionHandler(com.ibm.tdi.eclipse.widget.DiscoverSchemaWidget$1@537c537c),
+	expression=AndExpression(ActivePartExpression(com.ibm.tdi.eclipse.editors.AssemblyLineEditor3@40f440f4),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@33513351)),sourcePriority=1064960)
+HandlerActivation(commandId=com.ibm.tdi.rcp.discoverSchema,
+	handler=ActionHandler(com.ibm.tdi.eclipse.widget.DiscoverSchemaWidget$1@3b413b41),
+	expression=AndExpression(ActivePartExpression(com.ibm.tdi.eclipse.editors.AssemblyLineEditor3@40f440f4),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@33513351)),sourcePriority=1064960)
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:34:04.294
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:34:04.294
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:34:04.294
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:34:04.294
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:34:04.309
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:34:04.309
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:04.489
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:04.489
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:04.489
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:04.489
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:04.489
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:04.489
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:05.907
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:05.907
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:05.907
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:05.907
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:41.228
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:41.228
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:41.228
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:41.228
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:41.228
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:41.244
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:48.046
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:48.046
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:48.046
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:48.046
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:35:48.046
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:35:48.046
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:14.145
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:14.145
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:14.161
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:14.161
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:14.161
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:14.161
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:26.996
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:26.996
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:26.996
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:27.011
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:27.011
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:27.011
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:34.983
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:34.983
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:34.983
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:34.983
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:36:34.983
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:36:34.999
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:37:09.704
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:37:09.704
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:37:09.704
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:37:09.720
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:37:09.720
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:37:09.720
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:37:46.154
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:37:46.154
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:37:46.154
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:37:46.154
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:17.553
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:17.553
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:17.553
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:17.553
+!MESSAGE CTGDKE102E AssemblyLines/035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:17.585
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:17.600
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:17.600
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:17.600
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:17.600
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:17.600
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:20.007
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:20.007
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:38:20.007
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:38:20.007
+!MESSAGE CTGDKE102E 035_Set PD1 Group Membership_simplified_blank_canvas.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 14:39:40.951
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 14:39:40.951
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.534
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.534
+!MESSAGE CTGDKE102E AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.534
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.534
+!MESSAGE CTGDKE102E AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.534
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.534
+!MESSAGE CTGDKE102E AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.550
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.550
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.550
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.550
+!MESSAGE CTGDKE102E AssemblyLines/03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.597
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.597
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.597
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.597
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:03:20.597
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:03:20.597
+!MESSAGE CTGDKE102E 03_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.348
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.348
+!MESSAGE CTGDKE102E AssemblyLines/xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.348
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.348
+!MESSAGE CTGDKE102E AssemblyLines/xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.410
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.410
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.410
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.410
+!MESSAGE CTGDKE102E AssemblyLines/xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.551
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.567
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 15:56:03.567
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 15:56:03.567
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:01:03.573
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:01:03.573
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:01:03.573
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:01:03.573
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:06:03.636
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:06:03.651
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:06:03.651
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:06:03.651
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:11:03.708
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:11:03.724
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:11:03.724
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:11:03.724
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:16:03.773
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:16:03.773
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:16:03.788
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:16:03.788
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:21:03.841
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:21:03.841
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:21:03.841
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:21:03.841
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:26:03.909
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:26:03.909
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:26:03.909
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:26:03.909
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:31:03.977
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:31:03.977
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:31:03.977
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:31:03.977
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:36:04.051
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:36:04.051
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:36:04.066
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:36:04.066
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:41:04.126
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:41:04.126
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:41:04.126
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:41:04.126
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:46:04.198
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:46:04.198
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:46:04.214
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:46:04.214
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:51:04.321
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:51:04.321
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:51:04.321
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:51:04.336
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:56:04.395
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:56:04.410
+!MESSAGE CTGDKE102E Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 16:56:04.410
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 16:56:04.410
+!MESSAGE CTGDKE102E xx_Set PD1 Group Membership Based on 3PD Group member values.DataFlow.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 16:58:03.785
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 16:58:03.895
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 16:58:09.427
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 16:58:09.536
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 2 2014-03-19 16:58:20.101
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.navigator".
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.ui.navigator 4 0 2014-03-19 16:58:20.210
+!MESSAGE Group not found: group.reorganize
+!STACK 0
+java.lang.IllegalArgumentException: Group not found: group.reorganize
+	at org.eclipse.jface.action.ContributionManager.addToGroup(ContributionManager.java:131)
+	at org.eclipse.jface.action.ContributionManager.appendToGroup(ContributionManager.java:138)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionGroup.fillContextMenu(RefactorActionGroup.java:66)
+	at org.eclipse.ui.internal.navigator.resources.actions.RefactorActionProvider.fillContextMenu(RefactorActionProvider.java:49)
+	at org.eclipse.ui.navigator.NavigatorActionService$2.run(NavigatorActionService.java:221)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.navigator.NavigatorActionService.addCommonActionProviderMenu(NavigatorActionService.java:216)
+	at org.eclipse.ui.navigator.NavigatorActionService.fillContextMenu(NavigatorActionService.java:173)
+	at org.eclipse.ui.navigator.CommonNavigatorManager.fillContextMenu(CommonNavigatorManager.java:260)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$4.menuAboutToShow(CommonNavigatorManager.java:275)
+	at org.eclipse.jface.action.MenuManager.fireAboutToShow(MenuManager.java:338)
+	at org.eclipse.jface.action.MenuManager.handleAboutToShow(MenuManager.java:469)
+	at org.eclipse.jface.action.MenuManager.access$1(MenuManager.java:465)
+	at org.eclipse.jface.action.MenuManager$2.menuShown(MenuManager.java:491)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:241)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1053)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1077)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1058)
+	at org.eclipse.swt.widgets.Control.WM_INITMENUPOPUP(Control.java:4485)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4188)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:341)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1598)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2038)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4873)
+	at org.eclipse.swt.internal.win32.OS.TrackPopupMenu(Native Method)
+	at org.eclipse.swt.widgets.Menu._setVisible(Menu.java:256)
+	at org.eclipse.swt.widgets.Display.runPopups(Display.java:4107)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3651)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2640)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2604)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 17:53:36.854
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 17:53:36.854
+!MESSAGE CTGDKE102E 039_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 17:53:36.854
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 17:53:36.854
+!MESSAGE CTGDKE102E 039_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 2 0 2014-03-19 17:53:36.854
+!MESSAGE javax.naming.NameNotFoundException: CTGDKE218E Check current PD1 group members could not be found.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-19 17:53:36.854
+!MESSAGE CTGDKE102E 039_Set PD1 Group Membership Based on 3PD LDIF Group member values.DataFlow.IF GROUP Object.Populate PD0 Staging Group Membership.Connection Cannot setup inheritance: Check current PD1 group members.
+
+!ENTRY com.ibm.tdi.rcp 4 0 2014-03-20 12:37:09.398
+!MESSAGE java.net.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+!STACK 0
+java.net.ConnectException: Connection refused to host: localhost; nested exception is: 
+	java.net.ConnectException: Connection refused: connect
+	at com.ibm.tdi.eclipse.server.RMIServerAPI.getSession(RMIServerAPI.java:298)
+	at com.ibm.tdi.eclipse.Activator.stopDevelopmentServer(Activator.java:507)
+	at com.ibm.tdi.eclipse.Activator.stop(Activator.java:479)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$2.run(BundleContextImpl.java:843)
+	at java.security.AccessController.doPrivileged(AccessController.java:251)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:836)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:501)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:550)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1097)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(StartLevelManager.java:597)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:257)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(StartLevelManager.java:215)
+	at org.eclipse.osgi.framework.internal.core.InternalSystemBundle.suspend(InternalSystemBundle.java:266)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Framework.java:690)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Framework.java:588)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:415)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.core.runtime.compatibility 4 0 2014-03-20 12:37:10.598
+!MESSAGE 
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.core.internal.plugins.CompatibilityActivator.stop() of bundle org.eclipse.core.runtime.compatibility.
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:863)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:501)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:550)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1097)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.suspendAllBundles(StartLevelManager.java:617)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:261)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(StartLevelManager.java:215)
+	at org.eclipse.osgi.framework.internal.core.InternalSystemBundle.suspend(InternalSystemBundle.java:266)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Framework.java:690)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Framework.java:588)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:415)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+Caused by: java.lang.IllegalStateException
+	at org.eclipse.core.internal.runtime.CompatibilityHelper.getPluginDescriptor(CompatibilityHelper.java:59)
+	at org.eclipse.core.internal.plugins.CompatibilityActivator.stop(CompatibilityActivator.java:28)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$2.run(BundleContextImpl.java:843)
+	at java.security.AccessController.doPrivileged(AccessController.java:251)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:836)
+	... 19 more
+Root exception:
+java.lang.IllegalStateException
+	at org.eclipse.core.internal.runtime.CompatibilityHelper.getPluginDescriptor(CompatibilityHelper.java:59)
+	at org.eclipse.core.internal.plugins.CompatibilityActivator.stop(CompatibilityActivator.java:28)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$2.run(BundleContextImpl.java:843)
+	at java.security.AccessController.doPrivileged(AccessController.java:251)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:836)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:501)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:550)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1097)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.suspendAllBundles(StartLevelManager.java:617)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:261)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(StartLevelManager.java:215)
+	at org.eclipse.osgi.framework.internal.core.InternalSystemBundle.suspend(InternalSystemBundle.java:266)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Framework.java:690)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Framework.java:588)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:415)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:60)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:611)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)

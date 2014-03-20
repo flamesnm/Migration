@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="141" UUID="42fa4c89-cfac-40e8-8150-40778732cf45" created="Mon Dec 30 11:51:54 GMT 2013" createdBy="mclon0" main="02_Migrate 3PD LDIF Groups - Objects only" modified="Tue Mar 18 18:59:58 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="142" UUID="42fa4c89-cfac-40e8-8150-40778732cf45" created="Mon Dec 30 11:51:54 GMT 2013" createdBy="mclon0" main="02_Migrate 3PD LDIF Groups - Objects only" modified="Wed Mar 19 18:07:32 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
     <AssemblyLine name="02_Migrate 3PD LDIF Groups - Objects only">
-        <ModTime>1395169196397</ModTime>
+        <ModTime>1395252449604</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1395054038033</ModTime>
@@ -43,17 +43,17 @@
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1395169196397</ModTime>
+            <ModTime>1395252449604</ModTime>
             <Connector name="FileConnector">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1395169196397</ModTime>
+                <ModTime>1395252449604</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1395169196397</ModTime>
+                    <ModTime>1395252449604</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1803\O-DIrectories-update1803.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1903\O-DIrectories-update1903.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
