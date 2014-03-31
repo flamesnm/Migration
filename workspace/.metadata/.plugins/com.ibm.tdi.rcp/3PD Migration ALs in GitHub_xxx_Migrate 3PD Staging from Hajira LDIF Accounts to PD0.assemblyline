@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TDI>&#x0A;<Breakpoints>&#x0A;<Breakpoint enabled="true" location="If DEBUG"/>&#x0A;<Breakpoint enabled="true" location="logActionedAccounts"/>&#x0A;<Breakpoint enabled="true" location="setAccountStatusPD1"/>&#x0A;<Breakpoint enabled="true" location="setPasswordToRandomPD1"/>&#x0A;<Breakpoint enabled="true" location="updateOrAddAccountPD1"/>&#x0A;<Breakpoint enabled="true" location="Read 3PD Staging"/>&#x0A;</Breakpoints>&#x0A;<WatchList/>&#x0A;<Expressions></Expressions>&#x0A;</TDI>
