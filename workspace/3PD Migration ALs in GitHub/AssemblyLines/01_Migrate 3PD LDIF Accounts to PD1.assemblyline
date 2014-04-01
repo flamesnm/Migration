@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="329" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Mon Mar 31 17:54:52 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="356" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Tue Apr 01 17:22:36 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1396284892514</ModTime>
+        <ModTime>1396369354889</ModTime>
         <Settings/>
         <Hooks>
-            <ModTime>1396268485651</ModTime>
+            <ModTime>1396365226699</ModTime>
             <Hook name="epilog">
                 <InheritFrom>[no inheritance]</InheritFrom>
                 <Name>epilog</Name>
@@ -15,6 +15,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
+                <ModTime>1396365226699</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
@@ -32,6 +33,7 @@ var connectorMode="";]]></Script>
                 <Component name="updateOrAddAccountPD1" state="Simulated"/>
                 <Component name="setPasswordToRandomPD1" state="Simulated"/>
                 <Component name="setAccountStatusPD1" state="Simulated"/>
+                <Component name="RemoveBP-Boolean-02" state="Enabled"/>
                 <Component name="logActionedAccounts" state="Enabled"/>
                 <Component name="If DEBUG" state="Enabled"/>
                 <Component name="deleteJustActionedPD1AccountTestOnly" state="Simulated"/>
@@ -629,9 +631,9 @@ var connectorMode="";]]></Script>
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1396284892514</ModTime>
+            <ModTime>1396369354889</ModTime>
             <Branch name="IF 3PD User object">
-                <ModTime>1396284892514</ModTime>
+                <ModTime>1396369354889</ModTime>
                 <Connector name="updateOrAddAccountPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
                     <ModTime>1393326901764</ModTime>
@@ -4069,7 +4071,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </Connector>
                 <Connector name="setAccountStatusPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1396284892514</ModTime>
+                    <ModTime>1396369053965</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -4094,7 +4096,13 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1396284892514</ModTime>
+                        <ModTime>1396369053965</ModTime>
+                        <AttributeMapItem>
+                            <Name>bp-Boolean-02</Name>
+                            <Type>advanced</Type>
+                            <Script>"TRUE";</Script>
+                            <Simple>bp-Boolean-02</Simple>
+                        </AttributeMapItem>
                         <AttributeMapItem>
                             <Name>pwdLastSet</Name>
                             <Type>advanced</Type>
@@ -5913,6 +5921,12 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </PoolDefinition>
                     <PoolInstance/>
                 </Connector>
+                <Script name="RemoveBP-Boolean-02">
+                    <ModTime>1396369354889</ModTime>
+                    <parameter name="enabled">true</parameter>
+                    <parameter name="script"><![CDATA[// Who knew it was this difficult to remove an attribute from an account  ?
+setAccountStatusPD1.getConnector().removeAllAttributeValues("cn=" + work.uid + ",OU=Users,OU=Client,DC=pd0,DC=bp,DC=com","bp-Boolean-02");]]></parameter>
+                </Script>
                 <Script name="logActionedAccounts">
                     <ModTime>1393326862588</ModTime>
                     <parameter name="script"><![CDATA[// Log this to log
