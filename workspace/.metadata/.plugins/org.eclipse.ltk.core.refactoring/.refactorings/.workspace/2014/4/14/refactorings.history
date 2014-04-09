@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Group Memberships.assemblyline" element2="/3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated accounts and attributes.assemblyline" element3="/3PD Migration ALs in GitHub/AssemblyLines/96_Verify PD1 Pre-migrated Groups.assemblyline" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1396604060114"/>
+</session>

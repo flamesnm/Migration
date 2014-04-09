@@ -199,7 +199,7 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.28339446" ratioLeft="541" ratioRight="1368" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
+<info part="org.eclipse.ui.editorss" ratio="0.23258251" ratioLeft="444" ratioRight="1465" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
 <info folder="true" part="bottomRight" ratio="0.8762322" ratioLeft="800" ratioRight="113" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
@@ -241,6 +241,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD LDIF Accounts to PD1.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline"/>
 </file>
