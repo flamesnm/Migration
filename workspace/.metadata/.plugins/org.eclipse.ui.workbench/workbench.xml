@@ -17,7 +17,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="23"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
@@ -26,10 +26,15 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD LDIF Accounts to PD1.assemblyline" partName="01_Migrate 3PD LDIF Accounts to PD1" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline" title="01_Migrate 3PD LDIF Accounts to PD1" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
@@ -45,7 +50,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (2 items)"/>
+<category IMemento.internal.id="Warnings (4 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="598"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -74,7 +79,7 @@
 </viewState>
 </view>
 </views>
-<perspectives activePart="com.ibm.tdi.rcp.navigator" activePerspective="com.ibm.tdi.rcp.perspective">
+<perspectives activePart="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" activePerspective="com.ibm.tdi.rcp.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="com.ibm.tdi.rcp.actionSet"/>
@@ -224,7 +229,28 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
+</editors>
+<item historyLabel="xxx_Set_Password_for_Bulk_PD0_accounts" index="0"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="1"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="1"/>
+<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="1"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="04_Migrate GLMS Accounts_simplified" index="3"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="04_Migrate GLMS Accounts_simplified" index="3"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+<item active="true" historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="2"/>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -241,11 +267,8 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD LDIF Accounts to PD1.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Migrate GLMS Accounts_simplified.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
 </file>
 </mruList>
 </workbench>

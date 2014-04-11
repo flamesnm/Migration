@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="364" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Wed Apr 09 17:31:14 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="393" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Thu Apr 10 16:18:04 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1397061074011</ModTime>
+        <ModTime>1397143084881</ModTime>
         <Settings/>
         <Hooks>
-            <ModTime>1396365226699</ModTime>
+            <ModTime>1397140016804</ModTime>
             <Hook name="epilog">
                 <InheritFrom>[no inheritance]</InheritFrom>
                 <Name>epilog</Name>
@@ -15,12 +15,16 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
+                <ModTime>1397140016804</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
 var debug=false;
-var logToConsole=true;
-var connectorMode="";]]></Script>
+var logToConsole=false;
+var connectorMode="";
+
+// Build ISO code array
+var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,BO,BA,BW,BR,BN,BG,BF,BI,KH,CM,CA,CV,CF,TD,CL,CN,CO,KM,CD,CG,CR,CI,HR,CU,CY,CZ,DK,DJ,DM,DO,EC,EG,SV,GQ,ER,EE,ET,FJ,FI,FR,GA,GM,GE,DE,GH,GR,GD,GT,GN,GW,GY,HT,HN,HU,IS,IN,ID,IR,IQ,IE,IL,IT,JM,JP,JO,KZ,KE,KI,KP,KR,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,MK,MG,MW,MY,MV,ML,MT,MH,MR,MU,MX,FM,MD,MC,MN,ME,MA,MZ,MM,NA,NR,NP,NL,NZ,NI,NE,NG,NO,OM,PK,PW,PA,PG,PY,PE,PH,PL,PT,QA,RO,RU,RW,KN,LC,VC,WS,SM,ST,SA,SN,RS,SC,SL,SG,SK,SI,SB,SO,ZA,ES,LK,SD,SR,SZ,SE,CH,SY,TJ,TZ,TH,TL,TG,TO,TT,TN,TR,TM,TV,UG,UA,AE,GB,US,UY,UZ,VU,VA,VE,VN,YE,ZM,ZW,GE,TW,AZ,CY,MD,SO,GE,AU,CX,CC,AU,HM,NF,NC,PF,YT,GP,GP,PM,WF,TF,PF,BV,CK,NU,TK,GG,IM,JE,AI,BM,IO,VG,KY,FK,GI,MS,PN,SH,GS,TC,MP,PR,AS,UM,GU,UM,UM,UM,UM,UM,UM,UM,VI,UM,HK,MO,FO,GL,GF,GP,MQ,RE,AX,AW,AN,SJ,AC,TA,AQ,";]]></Script>
                 <Enabled>true</Enabled>
             </Hook>
         </Hooks>
@@ -31,7 +35,7 @@ var connectorMode="";]]></Script>
                 <Component name="IF 3PD User object" state="Enabled"/>
                 <Component name="updateOrAddAccountPD1" state="Simulated"/>
                 <Component name="setPasswordToRandomPD1" state="Simulated"/>
-                <Component name="setAccountStatusPD1" state="Simulated"/>
+                <Component name="setAccountStatusAndCountryPD1" state="Simulated"/>
                 <Component name="logActionedAccounts" state="Enabled"/>
                 <Component name="If DEBUG" state="Enabled"/>
                 <Component name="deleteJustActionedPD1AccountTestOnly" state="Simulated"/>
@@ -53,17 +57,17 @@ var connectorMode="";]]></Script>
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1396984880924</ModTime>
+            <ModTime>1397133253265</ModTime>
             <Connector name="read3PDLDIF">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1396984880924</ModTime>
+                <ModTime>1397133253265</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1396984880924</ModTime>
+                    <ModTime>1397133253265</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\test_account_single.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-09Apr2104\O-DIrectories-BAckup-09Apr2104.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -629,12 +633,12 @@ var connectorMode="";]]></Script>
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1397061074011</ModTime>
+            <ModTime>1397143084881</ModTime>
             <Branch name="IF 3PD User object">
-                <ModTime>1397061074011</ModTime>
+                <ModTime>1397143084881</ModTime>
                 <Connector name="updateOrAddAccountPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1397061074011</ModTime>
+                    <ModTime>1397143084881</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -660,7 +664,7 @@ var connectorMode="";]]></Script>
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1397061074011</ModTime>
+                        <ModTime>1397143084881</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>advanced</Type>
@@ -679,8 +683,19 @@ var connectorMode="";]]></Script>
                         <AttributeMapItem>
                             <Name>c</Name>
                             <Type>advanced</Type>
-                            <Script><![CDATA[// This mapping changed from 'co' to 'c' to meet ISIM provisioning standards.
-work.country]]></Script>
+                            <Enabled>true</Enabled>
+                            <Script><![CDATA[// This mapping changed from 'co' to 'c' to meet ISIM provisioning standards and enforce *ISO* values.
+// Original data from 3PD country attribute mapped to 'co' for prosperity
+
+if(work.country) {
+	var test3PDcountry = work.country[0].toLowerCase();
+	if (countryCodes.toLowerCase().indexOf(test3PDcountry) != -1) {
+		return test3PDcountry.toUpperCase();
+	} else {
+		return '';
+	}
+	return '';
+}]]></Script>
                             <Simple>co</Simple>
                         </AttributeMapItem>
                         <AttributeMapItem>
@@ -689,6 +704,14 @@ work.country]]></Script>
                             <Modify>false</Modify>
                             <Script>work.uid;</Script>
                             <Simple>cn</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>co</Name>
+                            <Type>advanced</Type>
+                            <Add>false</Add>
+                            <Script><![CDATA[// Retaining full country value in 'co' attribute to ensure values are not lost. Never used though.
+work.country;]]></Script>
+                            <Simple>co</Simple>
                         </AttributeMapItem>
                         <AttributeMapItem>
                             <Name>displayName</Name>
@@ -759,7 +782,7 @@ work.country]]></Script>
                     </Schema>
                     <Schema name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1391435372488</ModTime>
+                        <ModTime>1397132923023</ModTime>
                         <SchemaItem>
                             <Name>USNIntersite</Name>
                             <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
@@ -4076,9 +4099,9 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </PoolDefinition>
                     <PoolInstance/>
                 </Connector>
-                <Connector name="setAccountStatusPD1">
+                <Connector name="setAccountStatusAndCountryPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1396370651643</ModTime>
+                    <ModTime>1397142642254</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -4103,7 +4126,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1396370651643</ModTime>
+                        <ModTime>1397142642254</ModTime>
                         <AttributeMapItem>
                             <Name>pwdLastSet</Name>
                             <Type>advanced</Type>
