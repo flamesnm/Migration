@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="393" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Thu Apr 10 16:18:04 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="394" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Tue Apr 15 15:37:50 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1397143084881</ModTime>
+        <ModTime>1397572669248</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1397140016804</ModTime>
@@ -15,7 +15,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
-                <ModTime>1397140016804</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
@@ -35,7 +34,7 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
                 <Component name="IF 3PD User object" state="Enabled"/>
                 <Component name="updateOrAddAccountPD1" state="Simulated"/>
                 <Component name="setPasswordToRandomPD1" state="Simulated"/>
-                <Component name="setAccountStatusAndCountryPD1" state="Simulated"/>
+                <Component name="setAccountStatusPD1" state="Simulated"/>
                 <Component name="logActionedAccounts" state="Enabled"/>
                 <Component name="If DEBUG" state="Enabled"/>
                 <Component name="deleteJustActionedPD1AccountTestOnly" state="Simulated"/>
@@ -633,9 +632,9 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1397143084881</ModTime>
+            <ModTime>1397572669248</ModTime>
             <Branch name="IF 3PD User object">
-                <ModTime>1397143084881</ModTime>
+                <ModTime>1397572669248</ModTime>
                 <Connector name="updateOrAddAccountPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
                     <ModTime>1397143084881</ModTime>
@@ -4099,9 +4098,9 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </PoolDefinition>
                     <PoolInstance/>
                 </Connector>
-                <Connector name="setAccountStatusAndCountryPD1">
+                <Connector name="setAccountStatusPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1397142642254</ModTime>
+                    <ModTime>1397572669248</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -4126,11 +4125,11 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1397142642254</ModTime>
+                        <ModTime>1397572669248</ModTime>
                         <AttributeMapItem>
                             <Name>pwdLastSet</Name>
                             <Type>advanced</Type>
-                            <Enabled>true</Enabled>
+                            <Enabled>false</Enabled>
                             <Script>'0'</Script>
                             <Simple>pwdLastSet</Simple>
                         </AttributeMapItem>

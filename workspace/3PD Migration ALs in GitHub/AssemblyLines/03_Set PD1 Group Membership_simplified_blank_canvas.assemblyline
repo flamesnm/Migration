@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="181" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership_simplified_blank_canvas" modified="Wed Mar 19 18:07:45 GMT 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="183" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership_simplified_blank_canvas" modified="Tue Apr 15 15:57:41 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
     <Container name="References"/>
     
 
@@ -11,8 +11,10 @@
 
 
 
+
+
 <AssemblyLine name="03_Set PD1 Group Membership_simplified_blank_canvas">
-        <ModTime>1395252463968</ModTime>
+        <ModTime>1397573860491</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1388422206951</ModTime>
@@ -396,9 +398,9 @@
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1395251684772</ModTime>
+            <ModTime>1397573860491</ModTime>
             <Script name="setParameters">
-                <ModTime>1393433935081</ModTime>
+                <ModTime>1397573860491</ModTime>
                 <parameter name="script">var isTargetGroup=false;</parameter>
             </Script>
             <Loop name="objectClassLoop">

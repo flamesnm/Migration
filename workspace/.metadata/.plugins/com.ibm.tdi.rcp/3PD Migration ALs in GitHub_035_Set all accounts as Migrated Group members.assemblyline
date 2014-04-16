@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TDI>&#x0A;<Breakpoints>&#x0A;<Breakpoint enabled="false" location="buildMemberArray"/>&#x0A;<Breakpoint enabled="true" location="setMigratedGroupsMembership"/>&#x0A;</Breakpoints>&#x0A;<WatchList/>&#x0A;<Expressions>work.getString(dn);&#x0A;work.getString($dn);&#x0A;work.getString([$dn]);&#x0A;work.[$dn];&#x0A;work.[$dn]&#x0A;newCN&#x0A;work.getString(&quot;$dn&quot;)&#x0A;tempCN&#x0A;count&#x0A;pd1members&#x0A;pd1members[1];&#x0A;pd1members[101];&#x0A;work.migratedAccountGroup&#x0A;</Expressions>&#x0A;</TDI>
