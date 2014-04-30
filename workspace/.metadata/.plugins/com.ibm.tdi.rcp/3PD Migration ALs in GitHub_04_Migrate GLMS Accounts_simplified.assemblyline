@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TDI>&#x0A;<Expressions></Expressions>&#x0A;</TDI>
+<TDI>&#x0A;<Expressions>work.ntid[0]&#x0A;test = pwdArray[work.ntid[0]];&#x0A;work.pwd[0];&#x0A;</Expressions>&#x0A;<Breakpoints>&#x0A;<Breakpoint enabled="false" location="logOriginalPwd"/>&#x0A;<Breakpoint enabled="true" location="logExistingPassword"/>&#x0A;</Breakpoints>&#x0A;<WatchList/>&#x0A;</TDI>

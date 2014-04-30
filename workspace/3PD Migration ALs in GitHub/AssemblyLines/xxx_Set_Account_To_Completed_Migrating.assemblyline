@@ -1,0 +1,3786 @@
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="583" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Completed_Migrating" modified="Thu Apr 17 16:38:59 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+    <AssemblyLine name="xxx_Set_Account_To_Completed_Migrating">
+        <ModTime>1397749139394</ModTime>
+        <Settings>
+            <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
+            <parameter name="automapattributes">false</parameter>
+            <parameter name="createTombstones">false</parameter>
+            <parameter name="includeGlobalPrologs">true</parameter>
+            <parameter name="nullBehaviorDialog">showNullBehavior</parameter>
+        </Settings>
+        <Hooks/>
+        <CheckpointConfig/>
+        <SandboxConfig/>
+        <SimulationConfig>
+            <SimulationStates>
+                <Component name="set_uid" state="Enabled"/>
+                <Component name="PD1 Staging Set Password to random" state="Simulated"/>
+                <Component name="setAccountStatusPD1" state="Simulated"/>
+                <Component name="Log Migrated Accounts" state="Enabled"/>
+            </SimulationStates>
+            <ProxySettings/>
+        </SimulationConfig>
+        <LogConfig>
+            <ModTime>1397111470600</ModTime>
+            <Logger name="FileAppender">
+                <InheritFrom>system:/Loggers/ibmdi.FileAppender</InheritFrom>
+                <ModTime>1397111470600</ModTime>
+                <parameter name="File.Append">true</parameter>
+                <parameter name="File.File">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Logs\Set password and status of single account PD1.txt</parameter>
+                <parameter name="Pattern.ConversionPattern">%d{ISO8601} %-5p [%c] - %m%n</parameter>
+                <parameter name="com.ibm.di.log.layout">Pattern</parameter>
+                <parameter name="com.ibm.di.log.level">FATAL</parameter>
+                <parameter name="enabled">true</parameter>
+            </Logger>
+        </LogConfig>
+        <ContainerEF name="EntryFeedContainer">
+            <ModTime>1388408828496</ModTime>
+        </ContainerEF>
+        <ContainerDF name="DataFlowContainer">
+            <ModTime>1397749139394</ModTime>
+            <Script name="set_uid">
+                <ModTime>1397749037215</ModTime>
+                <parameter name="script"><![CDATA[//work.setAttribute("uid","couzb0");
+//work.setAttribute("uid","carvo5");
+//work.setAttribute("uid","cheld0");
+//work.setAttribute("uid","stain0");
+work.setAttribute("uid","authtest115");]]></parameter>
+            </Script>
+            <Connector name="PD1 Staging Set Password to random">
+                <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
+                <ModTime>1397739726406</ModTime>
+                <ConnectorMode>Update</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395258811649</ModTime>
+                    <parameter name="automapADPassword">true</parameter>
+                    <parameter name="debug">false</parameter>
+                    <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
+                    <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
+                    <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
+                    <parameter name="ldapUseSSL">true</parameter>
+                    <parameter name="ldapUsername">-serv-core-migrate</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1391603784850</ModTime>
+                    <AttributeMapItem>
+                        <Name>*</Name>
+                        <Type>simple</Type>
+                        <Simple>*</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1397739726406</ModTime>
+                    <AttributeMapItem>
+                        <Name>userPassword</Name>
+                        <Type>advanced</Type>
+                        <Enabled>true</Enabled>
+                        <Script><![CDATA[//f7H12mfF!
+//"Passw0rd"
+//"Monday01"
+//"Tuesday02"
+//"Wednesday03"
+//"Thursday04"
+"Friday05"
+//"Saturday06"
+//"Sunday07"
+//"January01"
+//"February02"]]></Script>
+                        <Simple>userPassword</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <DeltaSettings/>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1391603720461</ModTime>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountExpires</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPasswordTime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPwdCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>c</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>co</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>codePage</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>countryCode</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSCorePropagationData</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>description</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>distinguishedName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>instanceType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogoff</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogon</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogonTimestamp</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>memberOf</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mobile</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>name</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectCategory</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectClass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectGUID</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectSid</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryGroupID</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pwdLastSet</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userAccountControl</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPrincipalName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1391603720539</ModTime>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>USNIntersite</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>aCSPolicyName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountExpires</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountNameHistory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminDescription</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminDisplayName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedAttributes</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedAttributesEffective</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedChildClasses</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedChildClassesEffective</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>altSecurityIdentities</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>assistant</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>attributeCertificateAttribute</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>audio</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPasswordTime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPwdCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-01</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-02</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-03</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-04</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-05</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-01</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-02</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-03</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-04</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-01</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-02</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-03</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-04</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-01</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-02</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-03</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-04</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-05</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bridgeheadServerListBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>businessCategory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>c</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>canonicalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>carLicense</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>co</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>codePage</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>comment</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>company</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>controlAccessRights</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>countryCode</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>createTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dBCSPwd</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSASignature</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSCorePropagationData</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>defaultClassStore</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>department</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>departmentNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>description</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>desktopProfile</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>destinationIndicator</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>directReports</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayNamePrintable</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>distinguishedName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>division</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dynamicLDAPServer</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeID</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeType</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>extensionName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fRSMemberReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fSMORoleOwner</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>facsimileTelephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>flags</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fromEntry</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>frsComputerReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>garbageCollPeriod</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>gecos</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>generationQualifier</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>gidNumber</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupMembershipSAM</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupPriority</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupsToIgnore</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homeDirectory</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homeDrive</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePostalAddress</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>houseIdentifier</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>info</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>initials</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>instanceType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>internationalISDNNumber</Name>
+                        <NativeSyntax>systemMayContain/Numeric String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ipPhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isCriticalSystemObject</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isDeleted</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isPrivilegeHolder</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isRecycled</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>jpegPhoto</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>l</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>labeledURI</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastKnownParent</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogoff</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogon</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogonTimestamp</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>legacyExchangeDN</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.905</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lmPwdHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>localeID</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lockoutTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>loginShell</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonHours</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonWorkstation</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-ConsistencyChildCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-ConsistencyGuid</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-CreatorSID</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQDigests</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQDigestsMig</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQSignCertificates</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQSignCertificatesMig</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>managedObjects</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>manager</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>masteredBy</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>maxStorage</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>memberOf</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mhsORAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>middleName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mobile</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>modifyTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-PartitionSetLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-UserLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-UserPartitionSetLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDFSR-ComputerReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDFSR-MemberReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDRM-IdentityCertificate</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AllowedToDelegateTo</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Approx-Immed-Subordinates</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AuthenticatedAtDC</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AuthenticatedToAccountlist</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Cached-Membership</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Cached-Membership-Time-Stamp</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-EnabledFeatureBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-FailedInteractiveLogonCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-FailedInteractiveLogonCountAtLastSuccessfulLogon</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-HABSeniorityIndex</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-HostServiceAccountBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsDomainFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsFullReplicaFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsPartialReplicaFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-KeyVersionNumber</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-KrbTgtLinkBl</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastFailedInteractiveLogonTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastKnownRDN</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastSuccessfulInteractiveLogonTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LocalEffectiveDeletionTime</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LocalEffectiveRecycleTime</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-MembersForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NC-RO-Replica-Locations-BL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplCursors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplInboundNeighbors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplOutboundNeighbors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NcType</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NonMembersBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OIDToGroupLinkBl</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ObjectReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OperationsForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OperationsForAzTaskBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PSOApplied</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticCompanyName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticDepartment</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticDisplayName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticFirstName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticLastName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PrincipalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ReplAttributeMetaData</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ReplValueMetaData</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ResultantPSO</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-RevealedDSAs</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-RevealedListBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SecondaryKrbTgtNumber</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Site-Affinity</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SourceObjectDN</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SupportedEncryptionTypes</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-TasksForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-TasksForAzTaskBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-User-Account-Control-Computed</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-UserPasswordExpiryTimeComputed</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDs-masteredBy</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchAssistantName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchHouseIdentifier</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchLabeledURI</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msIIS-FTPDir</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msIIS-FTPRoot</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPAllowDialin</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPCallingStationID</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPSavedCallingStationID</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKI-CredentialRoamingTokens</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIAccountCredentials</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIDPAPIMasterKeys</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIRoamingTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedInterfaceId</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedIpv6Prefix</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedIpv6Route</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedInterfaceId</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedIpv6Prefix</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedIpv6Route</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSCallbackNumber</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSFramedIPAddress</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSFramedRoute</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSServiceType</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedCallbackNumber</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedFramedIPAddress</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedFramedRoute</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30Name</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30NisDomain</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30PosixMemberOf</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSAllowLogon</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSBrokenConnectionAction</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSConnectClientDrives</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSConnectPrinterDrives</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSDefaultToMainPrinter</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate2</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate3</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate4</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSHomeDirectory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSHomeDrive</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSInitialProgram</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLSProperty01</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLSProperty02</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion2</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion3</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion4</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS2</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS3</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS4</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxConnectionTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxDisconnectionTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxIdleTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSPrimaryDesktop</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProfilePath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProperty01</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProperty02</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSReconnectionAction</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSRemoteControl</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSSecondaryDesktops</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSWorkDirectory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>nTSecurityDescriptor</Name>
+                        <NativeSyntax>systemMustContain/1.2.840.113556.1.4.907</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>name</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>netbootSCPBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>networkAddress</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.905</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>nonSecurityMemberBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ntPwdHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>o</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectCategory</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectClass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectGUID</Name>
+                        <Syntax>[B</Syntax>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectSid</Name>
+                        <Syntax>[B</Syntax>
+                        <NativeSyntax>systemMustContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectVersion</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>operatorCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherFacsimileTelephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherHomePhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherIpPhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherLoginWorkstations</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherMailbox</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherMobile</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherPager</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherTelephone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherWellKnownObjects</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ou</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ownerBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pager</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>partialAttributeDeletionList</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>partialAttributeSet</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>personalTitle</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>photo</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>physicalDeliveryOfficeName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>possibleInferiors</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postOfficeBox</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalCode</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredDeliveryMethod</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredLanguage</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredOU</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryGroupID</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryInternationalISDNNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryTelexNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>profilePath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>proxiedObjectName</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>proxyAddresses</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pwdLastSet</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>queryPolicyBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>registeredAddress</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>replPropertyMetaData</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>replUpToDateVector</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>repsFrom</Name>
+                        <NativeSyntax>systemMayContain/OctetString</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>repsTo</Name>
+                        <NativeSyntax>systemMayContain/OctetString</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>revision</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>rid</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>roomNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sDRightsEffective</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sIDHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>scriptPath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>secretary</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>securityIdentifier</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>seeAlso</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>serialNumber</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>serverReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>servicePrincipalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowExpire</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowFlag</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowInactive</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowLastChange</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowMax</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowMin</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowWarning</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>showInAddressBook</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>showInAdvancedViewOnly</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>siteObjectBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>st</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>street</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>streetAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>structuralObjectClass</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>subRefs</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>subSchemaSubEntry</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>supplementalCredentials</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>systemFlags</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>teletexTerminalIdentifier</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telexNumber</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>terminalServer</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>textEncodedORAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>thumbnailLogo</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>thumbnailPhoto</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>title</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroups</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroupsGlobalAndUniversal</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroupsNoGCAcceptable</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNDSALastObjRemoved</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNLastObjRem</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNSource</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uid</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uidNumber</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unicodePwd</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unixHomeDirectory</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unixUserPassword</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>url</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userAccountControl</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userCert</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userCertificate</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPKCS12</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userParameters</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPassword</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPrincipalName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSMIMECertificate</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSharedFolder</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSharedFolderOther</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userWorkstations</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wWWHomePage</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wbemPath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wellKnownObjects</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x121Address</Name>
+                        <NativeSyntax>systemMayContain/Numeric String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x500uniqueIdentifier</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1389885851913</ModTime>
+                    <LinkCriteriaItem>
+                        <Key>1427bea94cf</Key>
+                        <Attribute>sAMAccountName</Attribute>
+                        <Operator>equals</Operator>
+                        <Value>$uid</Value>
+                    </LinkCriteriaItem>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1388421471495</ModTime>
+                    <Hook name="default_fail">
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <Name>default_fail</Name>
+                        <Script><![CDATA[// Log this to console
+task.logmsg(thisComponent.getName(), "+++++ Error updating UID: " + work.uid);
+// Log this to log
+task.logmsg("FATAL","+++++ " + thisComponent.getName() + " Error updating UID: " + work.uid);
+task.logmsg("FATAL","+++++ " + error.exception + " : " + error.message);
+task.logmsg("FATAL","-------------------------------------------------------------------");]]></Script>
+                        <Enabled>true</Enabled>
+                    </Hook>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+            <Connector name="setAccountStatusPD1">
+                <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
+                <ModTime>1397749139394</ModTime>
+                <ConnectorMode>Update</ConnectorMode>
+                <ConnectorState>Enabled</ConnectorState>
+                <Configuration>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395258816714</ModTime>
+                    <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
+                    <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
+                    <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
+                    <parameter name="ldapUseSSL">true</parameter>
+                    <parameter name="ldapUsername">-serv-core-migrate</parameter>
+                </Configuration>
+                <Parser>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <Schema name="Input">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                    <Schema name="Output">
+                        <InheritFrom>[parent]</InheritFrom>
+                    </Schema>
+                </Parser>
+                <AttributeMap name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                </AttributeMap>
+                <AttributeMap name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1397749139394</ModTime>
+                    <AttributeMapItem>
+                        <Name>bp-Boolean-02</Name>
+                        <Type>advanced</Type>
+                        <Enabled>true</Enabled>
+                        <Script><![CDATA['TRUE'; // q&a set
+//'FALSE'; // q&a not set]]></Script>
+                        <Simple>bp-Boolean-02</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>bp-Boolean-03</Name>
+                        <Type>advanced</Type>
+                        <Script><![CDATA[//'TRUE'; // migrating account
+'FALSE' // set to migrated
+//'';]]></Script>
+                        <Simple>bp-Boolean-03</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>pwdLastSet</Name>
+                        <Type>advanced</Type>
+                        <Enabled>false</Enabled>
+                        <Modify>true</Modify>
+                        <Script>'0';</Script>
+                        <Simple>pwdLastSet</Simple>
+                    </AttributeMapItem>
+                    <AttributeMapItem>
+                        <Name>userAccountControl</Name>
+                        <Type>advanced</Type>
+                        <Enabled>true</Enabled>
+                        <Script><![CDATA[//'514'
+'512']]></Script>
+                        <Simple>userAccountControl</Simple>
+                    </AttributeMapItem>
+                </AttributeMap>
+                <DeltaSettings/>
+                <Schema name="Input">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountExpires</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPasswordTime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPwdCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>c</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>co</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>codePage</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>countryCode</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSCorePropagationData</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>distinguishedName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>instanceType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogoff</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogon</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogonTimestamp</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>memberOf</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mobile</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>name</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectCategory</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectClass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectGUID</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectSid</Name>
+                        <Syntax>[B</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryGroupID</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pwdLastSet</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userAccountControl</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPrincipalName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                </Schema>
+                <Schema name="Output">
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1393414112897</ModTime>
+                    <SchemaItem>
+                        <Name>$dn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>USNIntersite</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>aCSPolicyName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountExpires</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>accountNameHistory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminDescription</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>adminDisplayName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedAttributes</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedAttributesEffective</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedChildClasses</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>allowedChildClassesEffective</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>altSecurityIdentities</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>assistant</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>attributeCertificateAttribute</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>audio</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPasswordTime</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>badPwdCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-01</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-02</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-03</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-04</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-05</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-01</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-02</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-03</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-04</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-01</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-02</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-03</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-04</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-01</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-02</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-03</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-04</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-05</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text128-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text256-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text32-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text64-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bridgeheadServerListBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>businessCategory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>c</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>canonicalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>carLicense</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>cn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>co</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>codePage</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>comment</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>company</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>controlAccessRights</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>countryCode</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>createTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dBCSPwd</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSASignature</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dSCorePropagationData</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>defaultClassStore</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>department</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>departmentNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>description</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>desktopProfile</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>destinationIndicator</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>directReports</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>displayNamePrintable</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>distinguishedName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>division</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>dynamicLDAPServer</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeID</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>employeeType</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>extensionName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fRSMemberReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fSMORoleOwner</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>facsimileTelephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>flags</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>fromEntry</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>frsComputerReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>garbageCollPeriod</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>gecos</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>generationQualifier</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>gidNumber</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>givenName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupMembershipSAM</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupPriority</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>groupsToIgnore</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homeDirectory</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homeDrive</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>homePostalAddress</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>houseIdentifier</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>info</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>initials</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>instanceType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>internationalISDNNumber</Name>
+                        <NativeSyntax>systemMayContain/Numeric String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ipPhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isCriticalSystemObject</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isDeleted</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isPrivilegeHolder</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>isRecycled</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>jpegPhoto</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>l</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>labeledURI</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastKnownParent</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogoff</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogon</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lastLogonTimestamp</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>legacyExchangeDN</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.905</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lmPwdHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>localeID</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>lockoutTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>loginShell</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonCount</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonHours</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>logonWorkstation</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-ConsistencyChildCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-ConsistencyGuid</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mS-DS-CreatorSID</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQDigests</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQDigestsMig</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQSignCertificates</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mSMQSignCertificatesMig</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mail</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>managedObjects</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>manager</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>masteredBy</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>maxStorage</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>memberOf</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mhsORAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>middleName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>mobile</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>modifyTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-PartitionSetLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-UserLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msCOM-UserPartitionSetLink</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDFSR-ComputerReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDFSR-MemberReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDRM-IdentityCertificate</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AllowedToDelegateTo</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Approx-Immed-Subordinates</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AuthenticatedAtDC</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-AuthenticatedToAccountlist</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Cached-Membership</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Cached-Membership-Time-Stamp</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-EnabledFeatureBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-FailedInteractiveLogonCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-FailedInteractiveLogonCountAtLastSuccessfulLogon</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-HABSeniorityIndex</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-HostServiceAccountBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsDomainFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsFullReplicaFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-IsPartialReplicaFor</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-KeyVersionNumber</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-KrbTgtLinkBl</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastFailedInteractiveLogonTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastKnownRDN</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LastSuccessfulInteractiveLogonTime</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LocalEffectiveDeletionTime</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-LocalEffectiveRecycleTime</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-MembersForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NC-RO-Replica-Locations-BL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplCursors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplInboundNeighbors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NCReplOutboundNeighbors</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NcType</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-NonMembersBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OIDToGroupLinkBl</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ObjectReferenceBL</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OperationsForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-OperationsForAzTaskBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PSOApplied</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticCompanyName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticDepartment</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticDisplayName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticFirstName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PhoneticLastName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-PrincipalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ReplAttributeMetaData</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ReplValueMetaData</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-ResultantPSO</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-RevealedDSAs</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-RevealedListBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SecondaryKrbTgtNumber</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-Site-Affinity</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SourceObjectDN</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-SupportedEncryptionTypes</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-TasksForAzRoleBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-TasksForAzTaskBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-User-Account-Control-Computed</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDS-UserPasswordExpiryTimeComputed</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msDs-masteredBy</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchAssistantName</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchHouseIdentifier</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msExchLabeledURI</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msIIS-FTPDir</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msIIS-FTPRoot</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPAllowDialin</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPCallingStationID</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msNPSavedCallingStationID</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKI-CredentialRoamingTokens</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIAccountCredentials</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIDPAPIMasterKeys</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msPKIRoamingTimeStamp</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedInterfaceId</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedIpv6Prefix</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-FramedIpv6Route</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedInterfaceId</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedIpv6Prefix</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUS-SavedFramedIpv6Route</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSCallbackNumber</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSFramedIPAddress</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSFramedRoute</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRADIUSServiceType</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedCallbackNumber</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedFramedIPAddress</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msRASSavedFramedRoute</Name>
+                        <NativeSyntax>systemMayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30Name</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30NisDomain</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msSFU30PosixMemberOf</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSAllowLogon</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSBrokenConnectionAction</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSConnectClientDrives</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSConnectPrinterDrives</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSDefaultToMainPrinter</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate2</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate3</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSExpireDate4</Name>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSHomeDirectory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSHomeDrive</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSInitialProgram</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLSProperty01</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLSProperty02</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion2</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion3</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSLicenseVersion4</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS2</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS3</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSManagingLS4</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxConnectionTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxDisconnectionTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSMaxIdleTime</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSPrimaryDesktop</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProfilePath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProperty01</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSProperty02</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSReconnectionAction</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSRemoteControl</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSSecondaryDesktops</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>msTSWorkDirectory</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>nTSecurityDescriptor</Name>
+                        <NativeSyntax>systemMustContain/1.2.840.113556.1.4.907</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>name</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>netbootSCPBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>networkAddress</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.905</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>nonSecurityMemberBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ntPwdHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>o</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectCategory</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectClass</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectGUID</Name>
+                        <Syntax>[B</Syntax>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectSid</Name>
+                        <Syntax>[B</Syntax>
+                        <NativeSyntax>systemMustContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>objectVersion</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>operatorCount</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherFacsimileTelephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherHomePhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherIpPhone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherLoginWorkstations</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherMailbox</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherMobile</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherPager</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherTelephone</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>otherWellKnownObjects</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ou</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>ownerBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pager</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>partialAttributeDeletionList</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>partialAttributeSet</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>personalTitle</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>photo</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>physicalDeliveryOfficeName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>possibleInferiors</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postOfficeBox</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>postalCode</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredDeliveryMethod</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredLanguage</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>preferredOU</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryGroupID</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryInternationalISDNNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>primaryTelexNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>profilePath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>proxiedObjectName</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>proxyAddresses</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>pwdLastSet</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>queryPolicyBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>registeredAddress</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>replPropertyMetaData</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>replUpToDateVector</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>repsFrom</Name>
+                        <NativeSyntax>systemMayContain/OctetString</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>repsTo</Name>
+                        <NativeSyntax>systemMayContain/OctetString</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>revision</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>rid</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>roomNumber</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMustContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sAMAccountType</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sDRightsEffective</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sIDHistory</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>scriptPath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>secretary</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>securityIdentifier</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>seeAlso</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>serialNumber</Name>
+                        <NativeSyntax>systemMayContain/Printable String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>serverReferenceBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>servicePrincipalName</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowExpire</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowFlag</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowInactive</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowLastChange</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowMax</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowMin</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>shadowWarning</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>showInAddressBook</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>showInAdvancedViewOnly</Name>
+                        <NativeSyntax>systemMayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>siteObjectBL</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>sn</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>st</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>street</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>streetAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>structuralObjectClass</Name>
+                        <NativeSyntax>systemMayContain/OID</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>subRefs</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>subSchemaSubEntry</Name>
+                        <NativeSyntax>systemMayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>supplementalCredentials</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>systemFlags</Name>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telephoneNumber</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>teletexTerminalIdentifier</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>telexNumber</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>terminalServer</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>textEncodedORAddress</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>thumbnailLogo</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>thumbnailPhoto</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>title</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroups</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroupsGlobalAndUniversal</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>tokenGroupsNoGCAcceptable</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNDSALastObjRemoved</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNLastObjRem</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uSNSource</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.906</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uid</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>uidNumber</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unicodePwd</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unixHomeDirectory</Name>
+                        <NativeSyntax>mayContain/IA5 String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>unixUserPassword</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>url</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userAccountControl</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userCert</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userCertificate</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPKCS12</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userParameters</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPassword</Name>
+                        <NativeSyntax>systemMayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userPrincipalName</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSMIMECertificate</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSharedFolder</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userSharedFolderOther</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>userWorkstations</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wWWHomePage</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wbemPath</Name>
+                        <NativeSyntax>systemMayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>wellKnownObjects</Name>
+                        <NativeSyntax>systemMayContain/1.2.840.113556.1.4.903</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenChanged</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>whenCreated</Name>
+                        <Syntax>java.lang.String</Syntax>
+                        <NativeSyntax>systemMayContain/Generalized Time</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x121Address</Name>
+                        <NativeSyntax>systemMayContain/Numeric String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>x500uniqueIdentifier</Name>
+                        <NativeSyntax>mayContain/Octet String</NativeSyntax>
+                    </SchemaItem>
+                </Schema>
+                <LinkCriteria>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <LinkCriteriaItem>
+                        <Key>1427c2d6ea4</Key>
+                        <Attribute>sAMAccountName</Attribute>
+                        <Operator>equals</Operator>
+                        <Value>$uid</Value>
+                    </LinkCriteriaItem>
+                </LinkCriteria>
+                <Hooks>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ModTime>1395076858970</ModTime>
+                    <Hook name="default_fail">
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <Name>default_fail</Name>
+                        <Script><![CDATA[// Log this to log
+// task.logmsg("FATAL","+++++ " + thisComponent.getName()+ " Error actioning UID: " + work.uid + " in " + connectorMode + " mode.");
+task.logmsg("FATAL","+++++ " + error.exception + " : " + error.message);
+task.logmsg("FATAL","-------------------------------------------------------------------");]]></Script>
+                        <Enabled>true</Enabled>
+                    </Hook>
+                </Hooks>
+                <CheckpointConfig/>
+                <SandboxConfig/>
+                <Reconnect>
+                    <InheritFrom>[parent]</InheritFrom>
+                    <ReconnectRules/>
+                </Reconnect>
+                <Operations/>
+                <PoolDefinition>
+                    <InheritFrom>[parent]</InheritFrom>
+                </PoolDefinition>
+                <PoolInstance/>
+            </Connector>
+            <Script name="Log Migrated Accounts">
+                <ModTime>1388421530778</ModTime>
+                <parameter name="script"><![CDATA[// Log this to console
+task.logmsg("***** " + thisComponent.getName(), "UID " + work.uid + " migrated successfully");
+// Log this to log
+task.logmsg("FATAL","**** " + thisComponent.getName() + " UID " + work.uid + " migrated successfully");
+task.logmsg("FATAL","-------------------------------------------------------------------");]]></parameter>
+            </Script>
+        </ContainerDF>
+        <ThreadOptions/>
+        <Operations/>
+        <InitParams>
+            <Schema name="AssemblyLineInitParams"/>
+        </InitParams>
+    </AssemblyLine>
+</MetamergeConfig>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="394" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Tue Apr 15 15:37:50 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="402" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Tue Apr 22 13:32:05 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1397572669248</ModTime>
+        <ModTime>1398169924313</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1397140016804</ModTime>
@@ -56,15 +56,15 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1397133253265</ModTime>
+            <ModTime>1398169723724</ModTime>
             <Connector name="read3PDLDIF">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1397133253265</ModTime>
+                <ModTime>1398169723724</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1397133253265</ModTime>
+                    <ModTime>1398169723724</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
                     <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-09Apr2104\O-DIrectories-BAckup-09Apr2104.ldif</parameter>
                 </Configuration>
@@ -632,12 +632,12 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1397572669248</ModTime>
+            <ModTime>1398169924313</ModTime>
             <Branch name="IF 3PD User object">
-                <ModTime>1397572669248</ModTime>
+                <ModTime>1398169924313</ModTime>
                 <Connector name="updateOrAddAccountPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1397143084881</ModTime>
+                    <ModTime>1398169914204</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -663,7 +663,7 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1397143084881</ModTime>
+                        <ModTime>1398169914204</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>advanced</Type>
@@ -676,8 +676,16 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
                             <Type>advanced</Type>
                             <Script><![CDATA[// Setting this with a blank string removes the attribute if it exists.
 // Check the Connector Flag setting in Advanced for RemoveEmptyStrings. 
-'';]]></Script>
+'FALSE'; // Password Q&A not set]]></Script>
                             <Simple>bp-Boolean-02</Simple>
+                        </AttributeMapItem>
+                        <AttributeMapItem>
+                            <Name>bp-Boolean-03</Name>
+                            <Type>advanced</Type>
+                            <Script><![CDATA[// Setting this with a blank string removes the attribute if it exists.
+// Check the Connector Flag setting in Advanced for RemoveEmptyStrings. 
+'TRUE'; // Account is a migrating account]]></Script>
+                            <Simple>bp-Boolean-03</Simple>
                         </AttributeMapItem>
                         <AttributeMapItem>
                             <Name>c</Name>
@@ -4100,7 +4108,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </Connector>
                 <Connector name="setAccountStatusPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1397572669248</ModTime>
+                    <ModTime>1398169924313</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -4125,7 +4133,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1397572669248</ModTime>
+                        <ModTime>1398169924313</ModTime>
                         <AttributeMapItem>
                             <Name>pwdLastSet</Name>
                             <Type>advanced</Type>
