@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="583" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Completed_Migrating" modified="Thu Apr 17 16:38:59 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="600" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Completed_Migrating" modified="Tue May 06 15:03:08 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="xxx_Set_Account_To_Completed_Migrating">
-        <ModTime>1397749139394</ModTime>
+        <ModTime>1399384987384</ModTime>
         <Settings>
             <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
             <parameter name="automapattributes">false</parameter>
@@ -37,18 +37,18 @@
             <ModTime>1388408828496</ModTime>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1397749139394</ModTime>
+            <ModTime>1399384987384</ModTime>
             <Script name="set_uid">
-                <ModTime>1397749037215</ModTime>
+                <ModTime>1399384987384</ModTime>
                 <parameter name="script"><![CDATA[//work.setAttribute("uid","couzb0");
 //work.setAttribute("uid","carvo5");
 //work.setAttribute("uid","cheld0");
 //work.setAttribute("uid","stain0");
-work.setAttribute("uid","authtest115");]]></parameter>
+work.setAttribute("uid","testd8");]]></parameter>
             </Script>
             <Connector name="PD1 Staging Set Password to random">
                 <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                <ModTime>1397739726406</ModTime>
+                <ModTime>1399384898380</ModTime>
                 <ConnectorMode>Update</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
@@ -82,7 +82,7 @@ work.setAttribute("uid","authtest115");]]></parameter>
                 </AttributeMap>
                 <AttributeMap name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1397739726406</ModTime>
+                    <ModTime>1399384898380</ModTime>
                     <AttributeMapItem>
                         <Name>userPassword</Name>
                         <Type>advanced</Type>
@@ -90,10 +90,10 @@ work.setAttribute("uid","authtest115");]]></parameter>
                         <Script><![CDATA[//f7H12mfF!
 //"Passw0rd"
 //"Monday01"
-//"Tuesday02"
+"Tuesday02"
 //"Wednesday03"
 //"Thursday04"
-"Friday05"
+//"Friday05"
 //"Saturday06"
 //"Sunday07"
 //"January01"

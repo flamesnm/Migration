@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="190" UUID="83d631d4-aa47-4bf5-948f-ef1a0dbdff39" created="Wed Feb 08 17:51:35 UTC 2012" createdBy="root" main="04_Migrate GLMS Accounts_simplified" modified="Tue Apr 29 17:31:45 BST 2014" modifiedBy="mclon0" project="ajf" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="191" UUID="83d631d4-aa47-4bf5-948f-ef1a0dbdff39" created="Wed Feb 08 17:51:35 UTC 2012" createdBy="root" main="04_Migrate GLMS Accounts_simplified" modified="Wed Apr 30 15:25:58 BST 2014" modifiedBy="mclon0" project="ajf" version="7.1.1">
     <Container name="References"/>
     
 
@@ -8,8 +8,9 @@
 
 
 
+
 <AssemblyLine name="04_Migrate GLMS Accounts_simplified">
-        <ModTime>1398789104726</ModTime>
+        <ModTime>1398867955607</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1393510223093</ModTime>
@@ -55,17 +56,17 @@ var pwdArray = new Object;]]></Script>
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1394723836863</ModTime>
+            <ModTime>1398867955607</ModTime>
             <Connector name="readGLMSAccounts">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1394723836863</ModTime>
+                <ModTime>1398867955607</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1394723723770</ModTime>
+                    <ModTime>1398867955607</ModTime>
                     <parameter name="debug">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\GLMS Account Exports\GLMSAccountsInitialPasswords.csv</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\GLMS Account Exports\Bulk Upload 3PD GLMS Accounts_amended_20140430.csv</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>

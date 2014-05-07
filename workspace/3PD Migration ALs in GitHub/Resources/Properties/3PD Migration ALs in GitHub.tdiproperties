@@ -1,9 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="1" UUID="45d95606-77d6-4b12-b2ba-0512f2b2a149" created="Thu Nov 21 12:32:01 GMT 2013" createdBy="mclon0" modified="Thu Nov 21 12:32:01 GMT 2013" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
-    <Container>
-        <Container name="Data"/>
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="17" UUID="45d95606-77d6-4b12-b2ba-0512f2b2a149" created="Thu Nov 21 12:32:01 GMT 2013" createdBy="mclon0" main="3PD Migration ALs in GitHub" modified="Wed May 07 12:02:30 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+    <Container name="3PD Migration ALs in GitHub">
+        <ModTime>1399460547218</ModTime>
+        <Container name="Data">
+            <ModTime>1399460547218</ModTime>
+            <ParameterList name="pd1LDAPGroupSearchBase">
+                <parameter name="Property">true</parameter>
+                <parameter name="serverName">pd1LDAPGroupSearchBase</parameter>
+                <parameter name="serverValue">OU=Groups, OU=Client, DC=pd1,DC=bp,DC=com</parameter>
+                <parameter name="value">OU=Groups, OU=Client, DC=pd1,DC=bp,DC=com</parameter>
+            </ParameterList>
+            <ParameterList name="pd1LDAPPassword">
+                <parameter name="Property">true</parameter>
+                <parameter name="Protect">true</parameter>
+                <parameter name="serverName">pd1LDAPPassword</parameter>
+                <parameter name="serverProtect">true</parameter>
+                <parameter name="serverValue">53eEzAY9uK63tH</parameter>
+                <parameter name="value">53eEzAY9uK63tH</parameter>
+            </ParameterList>
+            <ParameterList name="pd1LDAPURL">
+                <parameter name="Property">true</parameter>
+                <parameter name="serverName">pd1LDAPURL</parameter>
+                <parameter name="serverValue">ldaps://PD1XEUDC001.pd1.bp.com:636</parameter>
+                <parameter name="value">ldaps://PD1XEUDC001.pd1.bp.com:636</parameter>
+            </ParameterList>
+            <ParameterList name="pd1LDAPUserSearchBase">
+                <parameter name="Property">true</parameter>
+                <parameter name="serverName">pd1LDAPUserSearchBase</parameter>
+                <parameter name="serverValue">OU=Users,OU=Client,DC=pd1,DC=bp,DC=com</parameter>
+                <parameter name="value">OU=Users,OU=Client,DC=pd1,DC=bp,DC=com</parameter>
+            </ParameterList>
+            <ParameterList name="pd1LDAPUsername">
+                <parameter name="Property">true</parameter>
+                <parameter name="serverName">pd1LDAPUsername</parameter>
+                <parameter name="serverValue">-serv-core-migrate</parameter>
+                <parameter name="value">-serv-core-migrate</parameter>
+            </ParameterList>
+        </Container>
         <Properties name="Config">
+            <ModTime>1399457851996</ModTime>
             <Stores>
                 <PropertyStore name="3PD Migration ALs">
+                    <ModTime>1399457851996</ModTime>
                     <Parser>
                         <Schema name="Input">
                             <InheritFrom>[parent]</InheritFrom>
@@ -14,8 +51,10 @@
                     </Parser>
                     <RawConnector>
                         <InheritFrom>system:/Connectors/ibmdi.Properties</InheritFrom>
+                        <ModTime>1399457851996</ModTime>
                         <parameter name="collection">@SUBSTITUTE{config.$directory}/3PD Migration ALs.properties</parameter>
                         <parameter name="collectionType">3PD Migration ALs</parameter>
+                        <parameter name="keyAlias"/>
                     </RawConnector>
                     <Key>key</Key>
                     <Value>value</Value>

@@ -16,6 +16,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="190" y="23"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.ibm.tdi.editors.PropertiesEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="com.ibm.tdi.editors.ConnectorEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.browser.editor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -32,8 +34,8 @@
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Migrate GLMS Accounts_simplified.assemblyline" partName="04_Migrate GLMS Accounts_simplified" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline" title="04_Migrate GLMS Accounts_simplified" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
+<editor activePart="true" focus="true" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD LDIF Accounts to PD1.assemblyline" partName="01_Migrate 3PD LDIF Accounts to PD1" path="C:/Users/mclon0/Documents/GitHub/Migration/workspace/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline" title="01_Migrate 3PD LDIF Accounts to PD1" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
 </editor>
 </editors>
 <views>
@@ -50,7 +52,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (1 item)"/>
+<category IMemento.internal.id="Errors (1 item)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="64" org.eclipse.ui.ide.markerType="94" org.eclipse.ui.ide.pathField="124" org.eclipse.ui.ide.resourceField="94" org.eclipse.ui.ide.severityAndDescriptionField="598"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -79,7 +81,7 @@
 </viewState>
 </view>
 </views>
-<perspectives activePart="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" activePerspective="com.ibm.tdi.rcp.perspective">
+<perspectives activePart="com.ibm.tdi.rcp.navigator" activePerspective="com.ibm.tdi.rcp.perspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="com.ibm.tdi.rcp.actionSet"/>
@@ -114,29 +116,42 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <fastViewBars/>
-<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
 <page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.26" ratioLeft="260" ratioRight="740" relationship="2" relative="topLeft"/>
-<info folder="true" part="bottomRight" ratio="0.6597774" ratioLeft="415" ratioRight="214" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
+<info part="org.eclipse.ui.editorss" ratio="0.21477214" ratioLeft="410" ratioRight="1499" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6597774" ratioLeft="415" ratioRight="214" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.TaskList" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
-<info folder="true" part="bottomLeft" ratio="0.49920508" ratioLeft="314" ratioRight="315" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<info folder="true" part="bottomLeft" ratio="0.49920508" ratioLeft="314" ratioRight="315" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
 <page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
 </presentation>
 </folder>
 </info>
@@ -204,9 +219,9 @@
 <page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.28025144" ratioLeft="535" ratioRight="1374" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
+<info part="org.eclipse.ui.editorss" ratio="0.22001047" ratioLeft="420" ratioRight="1489" relationship="2" relative="org.eclipse.ui.internal.ViewStack@39963996"/>
 <info folder="true" part="bottomRight" ratio="0.85542166" ratioLeft="781" ratioRight="132" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.views.ProblemView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
 <page content="com.ibm.tdi.eclipse.views.JavaScriptView" label="JavaScript"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -231,73 +246,62 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Account_To_Migrating.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Account_To_Completed_Migrating.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_Bulk_PD0_accounts.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Account_To_Migrating.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/95_Report on migrated and unmigrated accounts.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.editors.PropertiesEditor" path="/3PD Migration ALs in GitHub/Resources/Properties/3PD Migration ALs in GitHub.tdiproperties"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.editors.PropertiesEditor" path="/3PD Migration ALs in GitHub/Resources/Properties/Java-Properties.tdiproperties"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership_simplified_blank_canvas.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/94_Individual Group Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/97_3PD Groups for CE Owned Accounts.assemblyline"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/05_Report on migrated and unmigrated accounts.assemblyline"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
 </editors>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="1"/>
-<item historyLabel="xxx_Set_Account_To_Migrating" index="0"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="1"/>
-<item historyLabel="xxx_Set_Account_To_Migrating" index="0"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="2"/>
-<item historyLabel="xxx_Set_Account_To_Migrating" index="0"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="2"/>
-<item historyLabel="xxx_Set_Account_To_Completed_Migrating" index="3"/>
-<item historyLabel="xxx_Set_Password_for_Bulk_PD0_accounts" index="4"/>
-<item historyLabel="xxx_Set_Account_To_Completed_Migrating" index="3"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="Java-Properties" index="3"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="3PD Migration ALs in GitHub" index="1"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="2"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
+<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="4"/>
 <item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="xxx_Set_Password_for_specific_PD0_accounts" index="6"/>
-<item historyLabel="xxx_Set_Account_To_Migrating" index="7"/>
-<item historyLabel="95_Report on migrated and unmigrated accounts" index="8"/>
-<item historyLabel="xxx_Set_Account_To_Migrating" index="7"/>
-<item historyLabel="95_Report on migrated and unmigrated accounts" index="8"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="11"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="5"/>
-<item historyLabel="94_Individual Group Set PD1 Group Membership Based on 3PD Group member values" index="12"/>
-<item historyLabel="95_Report on migrated and unmigrated accounts" index="8"/>
-<item historyLabel="97_3PD Groups for CE Owned Accounts" index="13"/>
-<item historyLabel="95_Report on migrated and unmigrated accounts" index="8"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="05_Report on migrated and unmigrated accounts" index="14"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="11"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="05_Report on migrated and unmigrated accounts" index="14"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="05_Report on migrated and unmigrated accounts" index="14"/>
-<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="11"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="04_Migrate GLMS Accounts_simplified" index="15"/>
-<item historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="9"/>
-<item historyLabel="02_Migrate 3PD LDIF Groups - Objects only" index="10"/>
-<item historyLabel="03_Set PD1 Group Membership_simplified_blank_canvas" index="11"/>
-<item historyLabel="05_Report on migrated and unmigrated accounts" index="14"/>
-<item active="true" historyLabel="04_Migrate GLMS Accounts_simplified" index="15"/>
+<item active="true" historyLabel="01_Migrate 3PD LDIF Accounts to PD1" index="0"/>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
@@ -315,32 +319,17 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Migrate GLMS Accounts_simplified.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="01_Migrate 3PD LDIF Accounts to PD1.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/01_Migrate 3PD LDIF Accounts to PD1.assemblyline"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="04_Migrate GLMS Accounts_simplified.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline">
+<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/04_Migrate GLMS Accounts_simplified.assemblyline"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="02_Migrate 3PD LDIF Groups - Objects only.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/02_Migrate 3PD LDIF Groups - Objects only.assemblyline"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="03_Set PD1 Group Membership_simplified_blank_canvas.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership_simplified_blank_canvas.assemblyline">
 <persistable path="/3PD Migration ALs in GitHub/AssemblyLines/03_Set PD1 Group Membership_simplified_blank_canvas.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="97_3PD Groups for CE Owned Accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/97_3PD Groups for CE Owned Accounts.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/97_3PD Groups for CE Owned Accounts.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="94_Individual Group Set PD1 Group Membership Based on 3PD Group member values.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/94_Individual Group Set PD1 Group Membership Based on 3PD Group member values.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/94_Individual Group Set PD1 Group Membership Based on 3PD Group member values.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="95_Report on migrated and unmigrated accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/95_Report on migrated and unmigrated accounts.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/95_Report on migrated and unmigrated accounts.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="xxx_Set_Account_To_Migrating.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Account_To_Migrating.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Account_To_Migrating.assemblyline"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.ibm.tdi.eclipse.editors.AssemblyLineEditor3" name="xxx_Set_Password_for_specific_PD0_accounts.assemblyline" tooltip="3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline">
-<persistable path="/3PD Migration ALs in GitHub/AssemblyLines/xxx_Set_Password_for_specific_PD0_accounts.assemblyline"/>
 </file>
 </mruList>
 </workbench>
