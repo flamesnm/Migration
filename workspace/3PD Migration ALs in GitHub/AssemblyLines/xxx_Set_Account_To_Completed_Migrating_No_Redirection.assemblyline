@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="600" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Completed_Migrating" modified="Tue May 06 15:03:08 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
-    <AssemblyLine name="xxx_Set_Account_To_Completed_Migrating">
-        <ModTime>1399384987384</ModTime>
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="607" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Completed_Migrating_No_Redirection" modified="Thu May 08 11:56:24 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+    <AssemblyLine name="xxx_Set_Account_To_Completed_Migrating_No_Redirection">
+        <ModTime>1399546584004</ModTime>
         <Settings>
             <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
             <parameter name="automapattributes">false</parameter>
@@ -14,19 +14,19 @@
         <SimulationConfig>
             <SimulationStates>
                 <Component name="set_uid" state="Enabled"/>
-                <Component name="PD1 Staging Set Password to random" state="Simulated"/>
+                <Component name="PD1 Staging Set Password to known value" state="Simulated"/>
                 <Component name="setAccountStatusPD1" state="Simulated"/>
                 <Component name="Log Migrated Accounts" state="Enabled"/>
             </SimulationStates>
             <ProxySettings/>
         </SimulationConfig>
         <LogConfig>
-            <ModTime>1397111470600</ModTime>
+            <ModTime>1399542829547</ModTime>
             <Logger name="FileAppender">
                 <InheritFrom>system:/Loggers/ibmdi.FileAppender</InheritFrom>
-                <ModTime>1397111470600</ModTime>
+                <ModTime>1399542829547</ModTime>
                 <parameter name="File.Append">true</parameter>
-                <parameter name="File.File">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Logs\Set password and status of single account PD1.txt</parameter>
+                <parameter name="File.File">C:\Users\mclon0\Desktop\FRV Data - AH and AM\Results folder\Logs\Support\SetAccountToCompletedMigratingNoRedirection.txt</parameter>
                 <parameter name="Pattern.ConversionPattern">%d{ISO8601} %-5p [%c] - %m%n</parameter>
                 <parameter name="com.ibm.di.log.layout">Pattern</parameter>
                 <parameter name="com.ibm.di.log.level">FATAL</parameter>
@@ -37,30 +37,26 @@
             <ModTime>1388408828496</ModTime>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1399384987384</ModTime>
+            <ModTime>1399546584004</ModTime>
             <Script name="set_uid">
-                <ModTime>1399384987384</ModTime>
-                <parameter name="script"><![CDATA[//work.setAttribute("uid","couzb0");
-//work.setAttribute("uid","carvo5");
-//work.setAttribute("uid","cheld0");
-//work.setAttribute("uid","stain0");
-work.setAttribute("uid","testd8");]]></parameter>
+                <ModTime>1399542238879</ModTime>
+                <parameter name="script">work.setAttribute("uid","testd8");</parameter>
             </Script>
-            <Connector name="PD1 Staging Set Password to random">
+            <Connector name="PD1 Staging Set Password to known value">
                 <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                <ModTime>1399384898380</ModTime>
+                <ModTime>1399546506024</ModTime>
                 <ConnectorMode>Update</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1395258811649</ModTime>
+                    <ModTime>1399539412315</ModTime>
                     <parameter name="automapADPassword">true</parameter>
                     <parameter name="debug">false</parameter>
-                    <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
-                    <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
-                    <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
+                    <parameter name="ldapPassword">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPPassword}</parameter>
+                    <parameter name="ldapSearchBase">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPUserSearchBase}</parameter>
+                    <parameter name="ldapUrl">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPURL}</parameter>
                     <parameter name="ldapUseSSL">true</parameter>
-                    <parameter name="ldapUsername">-serv-core-migrate</parameter>
+                    <parameter name="ldapUsername">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPUsername}</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>[parent]</InheritFrom>
@@ -260,7 +256,7 @@ work.setAttribute("uid","testd8");]]></parameter>
                 </Schema>
                 <Schema name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1391603720539</ModTime>
+                    <ModTime>1399539418979</ModTime>
                     <SchemaItem>
                         <Name>$dn</Name>
                         <Syntax>java.lang.String</Syntax>
@@ -357,6 +353,26 @@ work.setAttribute("uid","testd8");]]></parameter>
                         <NativeSyntax>mayContain/Boolean</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
+                        <Name>bp-Boolean-06</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-07</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-08</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-09</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-10</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
                         <Name>bp-DN-Multi-01</Name>
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
@@ -374,6 +390,26 @@ work.setAttribute("uid","testd8");]]></parameter>
                     </SchemaItem>
                     <SchemaItem>
                         <Name>bp-DN-Multi-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-11</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-12</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-13</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-14</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-15</Name>
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
@@ -397,6 +433,26 @@ work.setAttribute("uid","testd8");]]></parameter>
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
+                        <Name>bp-DN-Single-06</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-07</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-08</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-09</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-10</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
                         <Name>bp-Integer-01</Name>
                         <NativeSyntax>mayContain/INTEGER</NativeSyntax>
                     </SchemaItem>
@@ -415,6 +471,66 @@ work.setAttribute("uid","testd8");]]></parameter>
                     <SchemaItem>
                         <Name>bp-Integer-05</Name>
                         <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-06</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-07</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-08</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-09</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-10</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-06</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-07</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-08</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-09</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-10</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
                         <Name>bp-Text128-01</Name>
@@ -1910,17 +2026,17 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Connector>
             <Connector name="setAccountStatusPD1">
                 <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                <ModTime>1397749139394</ModTime>
+                <ModTime>1399546584004</ModTime>
                 <ConnectorMode>Update</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1395258816714</ModTime>
-                    <parameter name="ldapPassword">$erviceM1gr@t3</parameter>
-                    <parameter name="ldapSearchBase">OU=Users,OU=Client,DC=pd0,DC=bp,DC=com</parameter>
-                    <parameter name="ldapUrl">ldaps://PD0XEUDC001:636</parameter>
+                    <ModTime>1399539457759</ModTime>
+                    <parameter name="ldapPassword">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPPassword}</parameter>
+                    <parameter name="ldapSearchBase">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPUserSearchBase}</parameter>
+                    <parameter name="ldapUrl">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPURL}</parameter>
                     <parameter name="ldapUseSSL">true</parameter>
-                    <parameter name="ldapUsername">-serv-core-migrate</parameter>
+                    <parameter name="ldapUsername">@SUBSTITUTE{property.3PD Migration ALs in GitHub:pd1LDAPUsername}</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>[parent]</InheritFrom>
@@ -1936,7 +2052,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </AttributeMap>
                 <AttributeMap name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1397749139394</ModTime>
+                    <ModTime>1399546584004</ModTime>
                     <AttributeMapItem>
                         <Name>bp-Boolean-02</Name>
                         <Type>advanced</Type>
@@ -1952,14 +2068,6 @@ task.logmsg("FATAL","-----------------------------------------------------------
 'FALSE' // set to migrated
 //'';]]></Script>
                         <Simple>bp-Boolean-03</Simple>
-                    </AttributeMapItem>
-                    <AttributeMapItem>
-                        <Name>pwdLastSet</Name>
-                        <Type>advanced</Type>
-                        <Enabled>false</Enabled>
-                        <Modify>true</Modify>
-                        <Script>'0';</Script>
-                        <Simple>pwdLastSet</Simple>
                     </AttributeMapItem>
                     <AttributeMapItem>
                         <Name>userAccountControl</Name>
@@ -2124,7 +2232,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </Schema>
                 <Schema name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1393414112897</ModTime>
+                    <ModTime>1399539467165</ModTime>
                     <SchemaItem>
                         <Name>$dn</Name>
                         <Syntax>java.lang.String</Syntax>
@@ -2221,6 +2329,26 @@ task.logmsg("FATAL","-----------------------------------------------------------
                         <NativeSyntax>mayContain/Boolean</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
+                        <Name>bp-Boolean-06</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-07</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-08</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-09</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Boolean-10</Name>
+                        <NativeSyntax>mayContain/Boolean</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
                         <Name>bp-DN-Multi-01</Name>
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
@@ -2238,6 +2366,26 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     </SchemaItem>
                     <SchemaItem>
                         <Name>bp-DN-Multi-05</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-11</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-12</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-13</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-14</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Multi-15</Name>
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
@@ -2261,6 +2409,26 @@ task.logmsg("FATAL","-----------------------------------------------------------
                         <NativeSyntax>mayContain/DN</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
+                        <Name>bp-DN-Single-06</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-07</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-08</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-09</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-DN-Single-10</Name>
+                        <NativeSyntax>mayContain/DN</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
                         <Name>bp-Integer-01</Name>
                         <NativeSyntax>mayContain/INTEGER</NativeSyntax>
                     </SchemaItem>
@@ -2279,6 +2447,66 @@ task.logmsg("FATAL","-----------------------------------------------------------
                     <SchemaItem>
                         <Name>bp-Integer-05</Name>
                         <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-06</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-07</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-08</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-09</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Integer-10</Name>
+                        <NativeSyntax>mayContain/INTEGER</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-01</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-02</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-03</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-04</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-05</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-06</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-07</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-08</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-09</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
+                    </SchemaItem>
+                    <SchemaItem>
+                        <Name>bp-Text-Multi-10</Name>
+                        <NativeSyntax>mayContain/Directory String</NativeSyntax>
                     </SchemaItem>
                     <SchemaItem>
                         <Name>bp-Text128-01</Name>
