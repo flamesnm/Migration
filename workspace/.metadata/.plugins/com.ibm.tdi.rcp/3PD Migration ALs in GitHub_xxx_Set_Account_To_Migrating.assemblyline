@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TDI>&#x0A;<Expressions></Expressions>&#x0A;</TDI>
+<TDI>&#x0A;<Expressions></Expressions>&#x0A;<Breakpoints>
+<Breakpoint enabled="true" location="PD1 Staging Set Password to random"/>
+<Breakpoint enabled="true" location="setAccountStatusPD1"/>
+<Breakpoint enabled="true" location="Log Migrated Accounts"/>
+</Breakpoints>
+<WatchList></WatchList>
+</TDI>

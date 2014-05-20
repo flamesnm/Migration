@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="192" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership_simplified_blank_canvas" modified="Wed May 07 14:41:44 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="195" UUID="30dfccc0-aefa-488d-976a-dcd505705cd2" created="Mon Dec 30 11:50:59 GMT 2013" createdBy="mclon0" main="03_Set PD1 Group Membership_simplified_blank_canvas" modified="Fri May 16 17:51:55 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
     <Container name="References"/>
     
 
@@ -14,8 +14,11 @@
 
 
 
+
+
+
 <AssemblyLine name="03_Set PD1 Group Membership_simplified_blank_canvas">
-        <ModTime>1399470104672</ModTime>
+        <ModTime>1400259114505</ModTime>
         <Settings/>
         <Hooks>
             <ModTime>1388422206951</ModTime>
@@ -52,17 +55,17 @@
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1395252463968</ModTime>
+            <ModTime>1400259114505</ModTime>
             <Connector name="FileConnector">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1395252463968</ModTime>
+                <ModTime>1400259114505</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1395252463968</ModTime>
+                    <ModTime>1400259114505</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\Atif Data\O-DIrectories-update1903\O-DIrectories-update1903.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\3PD extract-16May2104eve\O-DIrectories-BAckup-16May2104eve.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -3167,7 +3170,6 @@ if (testDuplicate == null) {
                         <ModTime>1399470104672</ModTime>
                         <Hook name="default_fail">
                             <InheritFrom>[no inheritance]</InheritFrom>
-                            <ModTime>1399470104672</ModTime>
                             <Name>default_fail</Name>
                             <Script><![CDATA[// Log this to log
 task.logmsg("FATAL","+++++ " + thisComponent.getName() + " Error adding group: " + work.newGroupDN);

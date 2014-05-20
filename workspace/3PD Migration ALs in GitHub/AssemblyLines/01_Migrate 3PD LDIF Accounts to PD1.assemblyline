@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="438" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Thu May 08 11:45:15 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="450" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="01_Migrate 3PD LDIF Accounts to PD1" modified="Sun May 18 12:17:42 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="01_Migrate 3PD LDIF Accounts to PD1">
-        <ModTime>1399545915795</ModTime>
+        <ModTime>1400411859983</ModTime>
         <Settings>
             <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
             <parameter name="automapattributes">false</parameter>
@@ -10,7 +10,7 @@
             <parameter name="verbose"/>
         </Settings>
         <Hooks>
-            <ModTime>1399545915795</ModTime>
+            <ModTime>1400409398102</ModTime>
             <Hook name="epilog">
                 <InheritFrom>[no inheritance]</InheritFrom>
                 <Name>epilog</Name>
@@ -22,12 +22,12 @@ task.logmsg("FATAL","-----------------------------------------------------------
             </Hook>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
-                <ModTime>1399545915795</ModTime>
+                <ModTime>1400409398102</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
 var migratedCount = 0;
 var debug=true;
-var logToConsole=false;
+var logToConsole=true;
 var connectorMode="";
 
 // Build ISO code array
@@ -64,17 +64,17 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
             </Logger>
         </LogConfig>
         <ContainerEF name="EntryFeedContainer">
-            <ModTime>1399386572758</ModTime>
+            <ModTime>1400408768023</ModTime>
             <Connector name="read3PDLDIF">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1399386572758</ModTime>
+                <ModTime>1400408768023</ModTime>
                 <ConnectorMode>Iterator</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1399386572758</ModTime>
+                    <ModTime>1400408768023</ModTime>
                     <parameter name="exclusiveLock">false</parameter>
-                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-10Feb2104\test_account_single.ldif</parameter>
+                    <parameter name="filePath">C:\Users\mclon0\Desktop\FRV Data - AH and AM\3PD Account Data from LDIF\O-DIrectories-BAckup-09Apr2104\test_account_single.ldif</parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.LDIF</InheritFrom>
@@ -640,12 +640,12 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
             </Connector>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1399463957107</ModTime>
+            <ModTime>1400411859983</ModTime>
             <Branch name="IF 3PD User object">
-                <ModTime>1399463957107</ModTime>
+                <ModTime>1400411859983</ModTime>
                 <Connector name="updateOrAddAccountPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1399463957107</ModTime>
+                    <ModTime>1399889431487</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -672,7 +672,7 @@ var countryCodes = "AF,AL,DZ,AD,AO,AG,AR,AM,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BT,
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1399463957107</ModTime>
+                        <ModTime>1399889431487</ModTime>
                         <AttributeMapItem>
                             <Name>$dn</Name>
                             <Type>advanced</Type>
@@ -755,7 +755,7 @@ work.country;]]></Script>
                         <AttributeMapItem>
                             <Name>mail</Name>
                             <Type>advanced</Type>
-                            <Script>//work.mail</Script>
+                            <Script>work.mail</Script>
                             <Simple>mail</Simple>
                         </AttributeMapItem>
                         <AttributeMapItem>
@@ -793,7 +793,10 @@ work.country;]]></Script>
                             <Simple>telephoneNumber</Simple>
                         </AttributeMapItem>
                     </AttributeMap>
-                    <DeltaSettings/>
+                    <DeltaSettings>
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <ModTime>1399624635855</ModTime>
+                    </DeltaSettings>
                     <Schema name="Input">
                         <InheritFrom>[parent]</InheritFrom>
                         <ModTime>1399460013266</ModTime>
@@ -2732,7 +2735,7 @@ connectorMode = "nochange";]]></Script>
                 </Connector>
                 <Connector name="setPasswordToRandomPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1399459393578</ModTime>
+                    <ModTime>1400408839787</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -2760,7 +2763,7 @@ connectorMode = "nochange";]]></Script>
                     </AttributeMap>
                     <AttributeMap name="Output">
                         <InheritFrom>[parent]</InheritFrom>
-                        <ModTime>1393343848848</ModTime>
+                        <ModTime>1400408839787</ModTime>
                         <AttributeMapItem>
                             <Name>userPassword</Name>
                             <Type>advanced</Type>
@@ -2784,7 +2787,7 @@ connectorMode = "nochange";]]></Script>
 		password = character;
 	}
 } else {
-		password="Passw0rd";
+		password="Sunday18";
 }	
 
 if(logToConsole){
@@ -2794,7 +2797,10 @@ return password;]]></Script>
                             <Simple>userPassword</Simple>
                         </AttributeMapItem>
                     </AttributeMap>
-                    <DeltaSettings/>
+                    <DeltaSettings>
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <ModTime>1399624647747</ModTime>
+                    </DeltaSettings>
                     <Schema name="Input">
                         <InheritFrom>[parent]</InheritFrom>
                     </Schema>
@@ -4527,7 +4533,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
                 </Connector>
                 <Connector name="setAccountStatusPD1">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                    <ModTime>1399459847291</ModTime>
+                    <ModTime>1399624660689</ModTime>
                     <ConnectorMode>Update</ConnectorMode>
                     <ConnectorState>Enabled</ConnectorState>
                     <Configuration>
@@ -4572,7 +4578,10 @@ task.logmsg("FATAL","-----------------------------------------------------------
                             <Simple>userAccountControl</Simple>
                         </AttributeMapItem>
                     </AttributeMap>
-                    <DeltaSettings/>
+                    <DeltaSettings>
+                        <InheritFrom>[no inheritance]</InheritFrom>
+                        <ModTime>1399624660689</ModTime>
+                    </DeltaSettings>
                     <Schema name="Input">
                         <InheritFrom>[parent]</InheritFrom>
                         <ModTime>1391082317858</ModTime>
@@ -6502,7 +6511,7 @@ task.logmsg("FATAL","-----------------------------------------------------------
 migratedCount ++;]]></parameter>
                 </Script>
                 <Branch name="If DEBUG">
-                    <ModTime>1399460780028</ModTime>
+                    <ModTime>1400411859983</ModTime>
                     <Connector name="deleteJustActionedPD1AccountTestOnly">
                         <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
                         <ModTime>1399460780028</ModTime>

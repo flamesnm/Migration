@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="570" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Migrating" modified="Thu May 08 11:56:11 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="573" UUID="13138a5f-d229-4251-90fc-44f3f7e5e337" created="Fri Nov 15 12:22:26 GMT 2013" createdBy="mclon0" main="xxx_Set_Account_To_Migrating" modified="Tue May 13 17:12:29 BST 2014" modifiedBy="mclon0" project="3PD Staging Connectivity" version="7.1.1">
     <AssemblyLine name="xxx_Set_Account_To_Migrating">
-        <ModTime>1399546569599</ModTime>
+        <ModTime>1399997549390</ModTime>
         <Settings>
             <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
             <parameter name="automapattributes">false</parameter>
@@ -9,12 +9,13 @@
             <parameter name="nullBehaviorDialog">showNullBehavior</parameter>
         </Settings>
         <Hooks>
-            <ModTime>1399545885734</ModTime>
+            <ModTime>1399997549390</ModTime>
             <Hook name="prolog">
                 <InheritFrom>[no inheritance]</InheritFrom>
+                <ModTime>1399997549390</ModTime>
                 <Name>prolog</Name>
                 <Script><![CDATA[// Set run parameters
-var debug=false;
+var debug=true;
 var logToConsole=false;]]></Script>
                 <Enabled>true</Enabled>
             </Hook>
@@ -47,18 +48,18 @@ var logToConsole=false;]]></Script>
             <ModTime>1388408828496</ModTime>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1399546569599</ModTime>
+            <ModTime>1399997539765</ModTime>
             <Script name="set_uid">
-                <ModTime>1399545842564</ModTime>
+                <ModTime>1399997502453</ModTime>
                 <parameter name="script"><![CDATA[//work.setAttribute("uid","couzb0");
 //work.setAttribute("uid","carvo5");
 //work.setAttribute("uid","cheld0");
 //work.setAttribute("uid","stain0");
-work.setAttribute("uid","nmcnmc");]]></parameter>
+work.setAttribute("uid","warns4");]]></parameter>
             </Script>
             <Connector name="PD1 Staging Set Password to random">
                 <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
-                <ModTime>1399545521498</ModTime>
+                <ModTime>1399997539765</ModTime>
                 <ConnectorMode>Update</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
@@ -92,7 +93,7 @@ work.setAttribute("uid","nmcnmc");]]></parameter>
                 </AttributeMap>
                 <AttributeMap name="Output">
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1399545521498</ModTime>
+                    <ModTime>1399997539765</ModTime>
                     <AttributeMapItem>
                         <Name>userPassword</Name>
                         <Type>advanced</Type>
@@ -117,7 +118,7 @@ work.setAttribute("uid","nmcnmc");]]></parameter>
 		password = character;
 	}
 } else {
-		password="Passw0rd";
+		password="Tuesday13";
 }	
 
 if(logToConsole){

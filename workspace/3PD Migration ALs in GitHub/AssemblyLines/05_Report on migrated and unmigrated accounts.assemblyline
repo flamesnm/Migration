@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="30" UUID="a35e4aa9-e12b-43cb-91cd-02be26b1f668" created="Mon Dec 30 12:26:56 GMT 2013" createdBy="mclon0" main="05_Report on migrated and unmigrated accounts" modified="Thu May 08 15:30:38 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
+<?xml version="1.0" encoding="UTF-8"?><MetamergeConfig Cycle="31" UUID="a35e4aa9-e12b-43cb-91cd-02be26b1f668" created="Mon Dec 30 12:26:56 GMT 2013" createdBy="mclon0" main="05_Report on migrated and unmigrated accounts" modified="Mon May 12 14:45:59 BST 2014" modifiedBy="mclon0" project="3PD Migration ALs" version="7.1.1">
     <AssemblyLine name="05_Report on migrated and unmigrated accounts">
-        <ModTime>1399559436874</ModTime>
+        <ModTime>1399902358372</ModTime>
         <Settings>
             <parameter name="ALPoolSettingsDialog">showALPoolSettings</parameter>
             <parameter name="automapattributes">false</parameter>
@@ -11,7 +11,6 @@
         <Hooks>
             <ModTime>1399552889857</ModTime>
             <Hook name="prolog">
-                <ModTime>1399552889857</ModTime>
                 <Name>prolog</Name>
                 <Enabled>false</Enabled>
             </Hook>
@@ -44,7 +43,7 @@
             <ModTime>1398783368691</ModTime>
         </ContainerEF>
         <ContainerDF name="DataFlowContainer">
-            <ModTime>1399559436874</ModTime>
+            <ModTime>1399902358372</ModTime>
             <Script name="SetParms">
                 <ModTime>1399554176642</ModTime>
                 <parameter name="script"><![CDATA[var migratedAccounts = 0;
@@ -55,7 +54,7 @@ var totalAccounts = 0]]></parameter>
             <Loop name="LDAPReadPD1Accounts">
                 <ModTime>1399554314489</ModTime>
                 <LoopType>1</LoopType>
-                <Connector name="Connector Loop">
+                <Connector name="LDAPReadPD1Accounts">
                     <InheritFrom>system:/Connectors/ibmdi.LDAP</InheritFrom>
                     <ModTime>1399554314489</ModTime>
                     <ConnectorMode>Iterator</ConnectorMode>
@@ -1814,7 +1813,7 @@ var totalAccounts = 0]]></parameter>
                         </SchemaItem>
                     </Schema>
                     <Schema name="Output">
-                        <UserComment>{extsyntax=TEXTAREA, name=userComment, sample=Your own comments go here}</UserComment>
+                        <UserComment>{extsyntax=TEXTAREA, name=userComment}</UserComment>
                         <InheritFrom>[no inheritance]</InheritFrom>
                         <ModTime>1399553025879</ModTime>
                         <SchemaItem>
@@ -1948,14 +1947,14 @@ totalAccounts ++]]></parameter>
             </Loop>
             <Connector name="MigrationReportTotals">
                 <InheritFrom>system:/Connectors/ibmdi.FileSystem</InheritFrom>
-                <ModTime>1399559436874</ModTime>
+                <ModTime>1399902358372</ModTime>
                 <ConnectorMode>AddOnly</ConnectorMode>
                 <ConnectorState>Enabled</ConnectorState>
                 <Configuration>
                     <InheritFrom>[parent]</InheritFrom>
-                    <ModTime>1399559436874</ModTime>
+                    <ModTime>1399902358372</ModTime>
                     <parameter name="filePath"><![CDATA[@SUBSTITUTE{javascript var ds = (new Date()).toISOString().replace(/[^0-9]/g, "");
-return "C:\\Users\\mclon0\\Desktop\\FRV Data - AH and AM\\Results folder\\Reports\\MigrationStatus_" + ds + ".xlsx"}]]></parameter>
+return "C:\\Users\\mclon0\\Desktop\\FRV Data - AH and AM\\Results folder\\Reports\\MigrationStatus_" + ds + ".csv"}]]></parameter>
                 </Configuration>
                 <Parser>
                     <InheritFrom>system:/Parsers/ibmdi.CSV</InheritFrom>
